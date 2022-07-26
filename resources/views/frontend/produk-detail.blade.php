@@ -20,24 +20,104 @@
             <div>
                 <div class="row">
                     <div class="col-lg-4">
-                        <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}');"
-                            class="card shadow card-image">
-                        </div>
+                        <a data-bs-toggle="modal" data-bs-target="#preview">
+                            <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}');"
+                                class="card shadow card-image">
+                            </div>
+                        </a>
                         <div class="row mt-3">
-                            <div class="col-2 mb-3" style="padding: 0 0 0 10px">
-                                <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}');"
-                                    class="card shadow card-image-small">
+                            @if ($detail->gambar_2)
+                                <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}');"
+                                        class="card shadow card-image-small">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-2 mb-3" style="padding: 0 0 0 10px">
-                                <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}');"
-                                    class="card shadow card-image-small">
+                            @endif
+                            @if ($detail->gambar_3)
+                                <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}');"
+                                        class="card shadow card-image-small">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-2 mb-3" style="padding: 0 0 0 10px">
-                                <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}');"
-                                    class="card shadow card-image-small">
+                            @endif
+                            @if ($detail->gambar_4)
+                                <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}');"
+                                        class="card shadow card-image-small">
+                                    </div>
                                 </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="modal fade" id="preview" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" style="height: 500px; width: 100%;">
+                                            <div
+                                                style="
+                                                height: 100%; 
+                                                width: 100%; 
+                                                background-position: center;
+                                                background-size: cover;
+                                                background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}');">
+
+                                            </div>
+                                        </div>
+                                        @if ($detail->gambar_2)
+                                            <div class="carousel-item" style="height: 500px; width: 100%;">
+                                                <div
+                                                    style="
+                                                height: 100%; 
+                                                width: 100%; 
+                                                background-position: center;
+                                                background-size: cover;
+                                                background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}');">
+
+                                                </div>
+                                            </div>
+                                        @endif
+                                        @if ($detail->gambar_3)
+                                            <div class="carousel-item" style="height: 500px; width: 100%;">
+                                                <div
+                                                    style="
+                                                height: 100%; 
+                                                width: 100%; 
+                                                background-position: center;
+                                                background-size: cover;
+                                                background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}');">
+
+                                                </div>
+                                            </div>
+                                        @endif
+                                        @if ($detail->gambar_4)
+                                            <div class="carousel-item" style="height: 500px; width: 100%;">
+                                                <div
+                                                    style="
+                                                height: 100%; 
+                                                width: 100%; 
+                                                background-position: center;
+                                                background-size: cover;
+                                                background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}');">
+
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
