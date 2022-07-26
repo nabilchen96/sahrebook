@@ -133,11 +133,13 @@
                                     </span>
                                 @endif
                                 <p><b> Rp. {{ number_format($detail->harga) }}</b></p>
-                                <i class="bi bi-shop"></i>
-                                {{ $detail->name }}
+                                <a style="text-decoration: none;" href="{{ url('profil') }}/{{ $detail->id_user }}">                                
+                                    <i class="bi bi-shop"></i>
+                                    {{ $detail->name }}
+                                </a>
                                 <br />
-                                <i class="bi bi-whatsapp"></i>
-                                Hubungi Toko
+                                {{-- <i class="bi bi-whatsapp"></i>
+                                Hubungi Toko --}}
 
                                 <br /><br />
                                 <b>Deskripsi</b>
