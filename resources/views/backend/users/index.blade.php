@@ -87,7 +87,7 @@
                                 @if (Auth::user()->role == 'Admin')                                    
                                     <option value="Admin">Admin</option>
                                 @endif
-                                <option value="User">User</option>
+                                <option  value="User">User</option>
                             </select>
                         </div>
                     </div>
