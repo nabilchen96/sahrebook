@@ -27,7 +27,10 @@ class ProdukController extends Controller
             $produk = $produk->where('id_user', $data_user->id)->get();
         }
 
-        return response()->json(['data' => $produk]);
+        return response()->json([
+            'data'  => $produk, 
+            'user'  => $data_user
+        ]);
     }
 
     public function store(Request $request){
@@ -164,6 +167,30 @@ class ProdukController extends Controller
     public function delete(Request $request){
 
         $data = Produk::find($request->id)->delete();
+
+        $data = [
+            'responCode'    => 1,
+            'respon'        => 'Data Sukses Dihapus'
+        ];
+
+        return response()->json($data);
+    }
+
+    public function pilihanUKM(Request $request){
+
+        $data = Produk::find($request->id);
+
+        if($data->pilihan_ukm == ''){
+
+            $data->update([
+                'pilihan_ukm'   => 1
+            ]);
+        }else{
+
+            $data->update([
+                'pilihan_ukm'   => ''
+            ]);
+        }
 
         $data = [
             'responCode'    => 1,

@@ -73,7 +73,7 @@
                     {{-- <img src="{{ asset('logosc.png') }}" class="mr-2" alt="logo" /> --}}
                     SUMSEL CRAFTERS
                 </a>
-                <a class="navbar-brand brand-logo-mini" style="color: white;" href="index.html">
+                <a class="navbar-brand brand-logo-mini" style="color: white;" href="{{ url('/') }}">
                     {{-- <img src="{{ asset('logosc.png') }}" alt="logo" /> --}}
                     SC
                 </a>

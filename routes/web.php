@@ -66,6 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/back/store-product', 'App\Http\Controllers\ProdukController@store');
     Route::post('/back/update-product', 'App\Http\Controllers\ProdukController@update');
     Route::post('/back/delete-product', 'App\Http\Controllers\ProdukController@delete');
+    Route::post('/back/pilihan-UKM-product', 'App\Http\Controllers\ProdukController@pilihanUKM');
 
     //BERITA
     Route::get('/back/beritas', 'App\Http\Controllers\BeritaController@index');

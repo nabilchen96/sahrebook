@@ -46,6 +46,12 @@
                             <div class="card-body p-0">
                                 <h4>{{ $detail->judul_produk }}</h4>
                                 <span class="badge bg-primary mb-2">{{ $detail->jenis_produk }}</span>
+                                @if ($detail->pilihan_ukm == '1')
+                                    <span class="badge bg-danger mb-2">
+                                        <i class="bi bi-fire"></i>
+                                        Pilihan UKM
+                                    </span>
+                                @endif
                                 <p><b> Rp. {{ number_format($detail->harga) }}</b></p>
                                 <i class="bi bi-shop"></i>
                                 {{ $detail->name }}
@@ -69,7 +75,7 @@
                                     </button>
                                 </form>
                                 <br /><br />
-                            @else   
+                            @else
                                 <div class="alert alert-info">
                                     <i class="bi bi-door-closed"></i> Login untuk mulai ikut berdiskusi
                                 </div>

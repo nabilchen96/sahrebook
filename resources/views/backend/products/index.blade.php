@@ -42,6 +42,7 @@
                                     <th>Harga</th>
                                     <th width="5%"></th>
                                     <th width="5%"></th>
+                                    <th width="5%"></th>
                                 </tr>
                             </thead>
                         </table>
@@ -91,19 +92,23 @@
                             <input name="harga" id="harga" type="number" placeholder="Harga" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Gambar 1 <span class="text-danger" style="font-size: 12px;">(Max size: 500kb)</span></label>
+                            <label>Gambar 1 <span class="text-danger" style="font-size: 12px;">(Max size:
+                                    500kb)</span></label>
                             <input name="gambar_1" id="gambar_1" type="file" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Gambar 2 <span class="text-danger" style="font-size: 12px;">(Max size: 500kb)</span></label>
+                            <label>Gambar 2 <span class="text-danger" style="font-size: 12px;">(Max size:
+                                    500kb)</span></label>
                             <input name="gambar_2" id="gambar_2" type="file" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Gambar 3 <span class="text-danger" style="font-size: 12px;">(Max size: 500kb)</span></label>
+                            <label>Gambar 3 <span class="text-danger" style="font-size: 12px;">(Max size:
+                                    500kb)</span></label>
                             <input name="gambar_3" id="gambar_3" type="file" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Gambar 4 <span class="text-danger" style="font-size: 12px;">(Max size: 500kb)</span></label>
+                            <label>Gambar 4 <span class="text-danger" style="font-size: 12px;">(Max size:
+                                    500kb)</span></label>
                             <input name="gambar_4" id="gambar_4" type="file" class="form-control">
                         </div>
                     </div>
@@ -185,6 +190,35 @@
                     {
                         render: function(data, type, row, meta) {
                             return `Rp. ${new Intl.NumberFormat().format(row.harga)}`
+                        }
+                    },
+                    {
+                        render: function(data, type, row, meta) {
+
+                            @if (Auth::user()->role == 'Admin')
+                                
+                                if (row.pilihan_ukm == "1") {
+                                    
+                                    return `<a href="javascript:void(0)" onclick="pilihanUKMData(${row.id},${row.pilihan_ukm})">
+                                            <i style="font-size: 1.5rem;" class="text-danger bi bi-fire"></i>
+                                        </a>`
+                                } else {
+                                    return `<a href="javascript:void(0)" onclick="pilihanUKMData(${row.id},${row.pilihan_ukm})">
+                                            <i style="font-size: 1.5rem;" class="text-secondary bi bi-fire"></i>
+                                        </a>`
+                                }
+                            @else 
+                                if (row.pilihan_ukm == "1") {
+                                    
+                                    return `<a>
+                                            <i style="font-size: 1.5rem;" class="text-danger bi bi-fire"></i>
+                                        </a>`
+                                } else {
+                                    return `<a>
+                                            <i style="font-size: 1.5rem;" class="text-secondary bi bi-fire"></i>
+                                        </a>`
+                                }
+                            @endif
                         }
                     },
                     {
@@ -287,6 +321,49 @@
 
                 if (result.value) {
                     axios.post('/back/delete-product', {
+                            id
+                        })
+                        .then((response) => {
+                            if (response.data.responCode == 1) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Berhasil',
+                                    timer: 2000,
+                                    showConfirmButton: false
+                                })
+
+                                $('#myTable').DataTable().clear().destroy();
+                                getData();
+
+                            } else {
+                                Swal.fire({
+                                    icon: 'warning',
+                                    title: 'Gagal...',
+                                    text: response.data.respon,
+                                })
+                            }
+                        }, (error) => {
+                            console.log(error);
+                        });
+                }
+
+            });
+        }
+
+        pilihanUKMData = (id, pilihan_ukm) => {
+            Swal.fire({
+                title: pilihan_ukm == '1' ? 'Ingin membatalkan data ini?' : 'Ingin memilih data ini?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                confirmButtonText: 'Ya',
+                cancelButtonColor: '#3085d6',
+                cancelButtonText: "Batal"
+
+            }).then((result) => {
+
+                if (result.value) {
+                    axios.post('/back/pilihan-UKM-product', {
                             id
                         })
                         .then((response) => {
