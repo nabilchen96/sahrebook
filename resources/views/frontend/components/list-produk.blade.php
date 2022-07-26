@@ -1,7 +1,7 @@
 <div class="col-lg-12 px-4">
     <div class="row">
         @forelse ($data as $item)
-            <div class="col-lg-3 col-6 mt-4">
+            <div class="col-lg-3 p-lg-2 p-1 col-6">
                 <a href="{{ url('produk-detail') }}/{{ $item->id }}" style="text-decoration: none;"
                     class="card shadow">
                     <img class="foto_produk" src="{{ asset('gambar_produk') }}/{{ $item->gambar_1 }}" />
@@ -20,8 +20,8 @@
         @empty
         <div class="col-lg-12 text-center mt-5">
             <img src="{{ asset('search.svg') }}" width="300px" height="300px" alt="">
-            <h4 class="mt-2">Oop!, data yang anda cari tidak ditemukan</h4>
-            <h6>Coba cari dengan kata kunci yang mendekati</h6>
+            <h4 class="mt-2">Oop!, produk yang anda cari tidak ditemukan</h4>
+            <h6>Atau jadilah yang pertama untuk menjual produk yang dicari</h6>
         </div>
         @endforelse
     </div>

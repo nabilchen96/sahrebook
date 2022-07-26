@@ -1,7 +1,7 @@
 <div class="col-lg-12 px-4">
     <div class="row">
         @forelse ($data as $item)
-            <div class="col-lg-3 col-6 mt-3">
+            <div class="col-lg-3 p-lg-2 p-1 col-6 mt-3">
                 <a href="{{ url('berita-detail') }}/{{ $item->id }}" style="text-decoration: none;"
                     class="card shadow">
                     <img class="foto_berita" src="{{ asset('gambar_berita') }}/{{ $item->gambar }}" />
