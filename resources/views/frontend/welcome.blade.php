@@ -1,7 +1,7 @@
 @extends('frontend.app')
 @section('content')
     {{-- slider --}}
-    <div class="container px-4 mt-4">
+    <div class="container px-3 mt-4">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -73,8 +73,8 @@
     <div class="container mt-5">
         <div class="row">
             {{-- daftar produk --}}
-            <h4 class="px-4">Daftar Produk</h4>
-            <a class="px-4" style="text-decoration: none;" href="{{ url('produk') }}">
+            <h4 class="px-3">Daftar Produk</h4>
+            <a class="px-3" style="text-decoration: none;" href="{{ url('produk') }}">
                 Lihat Porduk UKM Lainnya
                 <i class="bi bi-bag"></i>
             </a>

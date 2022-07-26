@@ -72,7 +72,7 @@
 <body style="background-color: #f6f6f6">
     <div style="z-index: 9; position: sticky; top: 0">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
-            <div class="container py-2 px-4">
+            <div class="container py-2 px-3">
                 <a class="navbar-brand py-0" href="{{ url('/') }}">
                     <div class="float-left tentang">
                         <img src="{{ url('logosc.png') }}" height="45" alt="">

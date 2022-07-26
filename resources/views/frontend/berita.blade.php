@@ -9,7 +9,7 @@
             url('{{ asset('office.jpg') }}') !important;
             min-height: 200px;
         ">
-        <div class="container px-4 py-4">
+        <div class="container px-3 py-4">
             <div class="tentang text-white">
                 <div style="margin-top: auto; margin-bottom: auto">
                     <h2>Daftar Berita</h2>
@@ -19,10 +19,10 @@
             </div>
         </div>
     </div>
-    <div class="container px-4 mt-5">
+    <div class="container mt-5">
         <div class="row">
             {{-- list berita --}}
-            <h4 class="px-4">Berita</h4>
+            <h4 class="px-3">Berita</h4>
             @include('frontend.components.list-berita', ['data' => $berita])
 
         </div>

@@ -9,7 +9,7 @@
             url('{{ asset('batik.jpg') }}') !important;
         min-height: 200px;
         ">
-        <div class="container px-4 py-4">
+        <div class="container px-3 py-4">
             <div class="tentang text-white">
                 <div style="margin-top: auto; margin-bottom: auto">
                     <h2>Daftar Produk</h2>
@@ -22,7 +22,7 @@
     <div class="container mt-5">
         <div class="row">
             {{-- daftar produk  --}}
-            <h4 class="px-4">Daftar Produk</h4>
+            <h4 class="px-3">Daftar Produk</h4>
             @include('frontend.components.list-produk', ['data' => $produk])
 
             <div class="mt-4 px-4">
