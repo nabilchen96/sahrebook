@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-6 mb-4 stretch-card transparent">
+                <div class="col-md-6 col-6 mb-4 mb-lg-0 stretch-card transparent">
                     <div class="card card-light-danger">
                         <div class="card-body">
                             <p class="mb-4">Total Produk <br> Anda</p>
