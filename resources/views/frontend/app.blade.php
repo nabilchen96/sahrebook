@@ -150,7 +150,7 @@
             width="100%" height="300" style="border: 0" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="text-center py-4">
-            Copyright ©2022 All rights reserved | Created By Nabil Sahretech
+            Copyright ©2022 All rights reserved | Created By Nabil <a target="_blank" href="https://sahretech.com">sahretech</a>
         </div>
     </div>
 
