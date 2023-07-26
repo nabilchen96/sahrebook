@@ -3,8 +3,9 @@
     <style>
         .card-image {
             background-size: cover;
+            /* background-repeat: no-repeat;  */
             background-position: center;
-            height: 300px;
+            height: 400px;
         }
 
         .card-image-small {
@@ -12,253 +13,205 @@
             background-position: center;
             aspect-ratio: 1 / 1;
         }
+
+        .social-share {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 999;
+        }
+
+        .share-button {
+            display: block;
+            margin-bottom: 5px;
+            background-color: #3b5998;
+            /* Warna latar belakang Facebook */
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .share-button:hover {
+            background-color: #2d4373;
+            /* Warna latar belakang Facebook saat dihover */
+        }
     </style>
 @endpush
 @section('content')
-    <div class="container mt-4 mb-5 px-4">
-        <div>
-            <div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a data-bs-toggle="modal" data-bs-target="#preview">
-                            <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}');"
-                                class="card shadow card-image">
-                            </div>
-                        </a>
-                        <div class="row mt-3">
-                            @if ($detail->gambar_2)
-                                <div class="col-2 mb-3" style="padding: 0 0 0 10px">
-                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}');"
-                                        class="card shadow card-image-small">
-                                    </div>
-                                </div>
-                            @endif
-                            @if ($detail->gambar_3)
-                                <div class="col-2 mb-3" style="padding: 0 0 0 10px">
-                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}');"
-                                        class="card shadow card-image-small">
-                                    </div>
-                                </div>
-                            @endif
-                            @if ($detail->gambar_4)
-                                <div class="col-2 mb-3" style="padding: 0 0 0 10px">
-                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}');"
-                                        class="card shadow card-image-small">
-                                    </div>
-                                </div>
-                            @endif
-                        </div>
+    <div class="social-share">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}" class="share-button"
+            style="font-size: 14px;" id="facebook-share">
+            <i class="bi bi-facebook"></i>
+        </a>
+        <a style="background: #55acee;" target="_blank" href="https://twitter.com/intent/tweet?url={{ url()->current() }}"
+            class="share-button" id="twitter-share">
+            <i class="bi bi-twitter"></i>
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={{ url()->current() }}"
+            class="share-button" id="linkedin-share">
+            <i class="bi bi-linkedin"></i>
+        </a>
+        <a style="background: #CB2027;" target="_blank"
+            href="https://pinterest.com/pin/create/button/?url={{ url()->current() }}" class="share-button"
+            id="pinterest-share">
+            <i class="bi bi-pinterest"></i>
+        </a>
+        <a style="background: #25d366;" target="_blank" class="share-button"
+            href="https://web.whatsapp.com/send?text=How to Make a Bubble Bottom Bar in Flutter | {{ url()->current() }}">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+    <div class="container d-flex justify-content-between mt-4 mb-5">
+        <div class="row">
+            <div class="col-lg-4 pe-4">
+                <a href="" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}">
+                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}');"
+                        class="card card-image shadow">
                     </div>
-                    <div class="modal fade" id="preview" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active" style="height: 500px; width: 100%;">
-                                            <div
-                                                style="
-                                                height: 100%; 
-                                                width: 100%; 
-                                                background-position: center;
-                                                background-size: cover;
-                                                background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}');">
-
-                                            </div>
-                                        </div>
-                                        @if ($detail->gambar_2)
-                                            <div class="carousel-item" style="height: 500px; width: 100%;">
-                                                <div
-                                                    style="
-                                                height: 100%; 
-                                                width: 100%; 
-                                                background-position: center;
-                                                background-size: cover;
-                                                background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}');">
-
-                                                </div>
-                                            </div>
-                                        @endif
-                                        @if ($detail->gambar_3)
-                                            <div class="carousel-item" style="height: 500px; width: 100%;">
-                                                <div
-                                                    style="
-                                                height: 100%; 
-                                                width: 100%; 
-                                                background-position: center;
-                                                background-size: cover;
-                                                background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}');">
-
-                                                </div>
-                                            </div>
-                                        @endif
-                                        @if ($detail->gambar_4)
-                                            <div class="carousel-item" style="height: 500px; width: 100%;">
-                                                <div
-                                                    style="
-                                                height: 100%; 
-                                                width: 100%; 
-                                                background-position: center;
-                                                background-size: cover;
-                                                background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}');">
-
-                                                </div>
-                                            </div>
-                                        @endif
-                                    </div>
-                                    <button class="carousel-control-prev" type="button"
-                                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button"
-                                        data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
+                </a>
+                <div class="row mt-3">
+                    @if ($detail->gambar_2)
+                        <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}">
+                                <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}');"
+                                    class="shadow card card-image-small">
                                 </div>
-
-                            </div>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="" style="min-height: 500px">
-                            <div class="card-body p-0">
-                                <h4>{{ $detail->judul_produk }}</h4>
-                                <span class="badge bg-primary mb-2">{{ $detail->jenis_produk }}</span>
-                                @if ($detail->pilihan_ukm == '1')
-                                    <span class="badge bg-danger mb-2">
-                                        <i class="bi bi-fire"></i>
-                                        Pilihan UKM
-                                    </span>
-                                @endif
-                                <p><b> Rp. {{ number_format($detail->harga) }}</b></p>
-                                <a style="text-decoration: none;" href="{{ url('profil') }}/{{ $detail->id_user }}">                                
-                                    <i class="bi bi-shop"></i>
-                                    {{ $detail->name }}
-                                </a>
-                                <br />
-                                {{-- <i class="bi bi-whatsapp"></i>
-                                Hubungi Toko --}}
+                    @endif
+                    @if ($detail->gambar_3)
+                        <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}">
+                                <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}');"
+                                    class="shadow card card-image-small">
+                                </div>
+                            </a>
+                        </div>
+                    @endif
+                    @if ($detail->gambar_4)
+                        <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}">
+                                <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}');"
+                                    class="shadow card card-image-small">
+                                </div>
+                            </a>
+                        </div>
+                    @endif
+                </div>
+                <br><br>
+            </div>
+            <div class="col-lg-8 px-4">
+                <div class="" style="min-height: 500px">
+                    <div class="card-body p-0 ">
+                        <div>
+                            <h4>{{ $detail->judul_produk }}</h4>
+                            <span class="badge bg-primary mb-2">{{ $detail->jenis_produk }}</span>
+                            @if ($detail->pilihan_ukm == '1')
+                                <span class="badge bg-danger mb-2">
+                                    <i class="bi bi-fire"></i>
+                                    Pilihan UKM
+                                </span>
+                            @endif
+                            <p><b> Rp. {{ number_format($detail->harga) }}</b></p>
+                            <a style="text-decoration: none;" href="{{ url('profil') }}/{{ $detail->id_user }}">
+                                <i class="bi bi-shop"></i>
+                                {{ $detail->name }}
+                            </a>
+                            <br />
 
-                                <br /><br />
-                                <b>Deskripsi</b>
-                                <p>
-                                    <?php echo nl2br($detail->deskripsi); ?>
-                                </p>
-                            </div>
-                            <h4 class="mt-5">Diskusi</h4>
                             @if (Auth::check())
-                                <form id="form">
-                                    <input type="hidden" name="id_produk" id="id_produk">
-                                    <textarea name="pesan" id="pesan" class="form-control mb-4" cols="30" rows="5" placeholder="Diskusi"></textarea>
+                                <?php
+                                
+                                $cek = DB::table('tagihans as t')
+                                    ->join('detail_tagihans as dt', 'dt.id_tagihan', '=', 't.id')
+                                    ->where('dt.id_produk', $detail->id)
+                                    ->where('t.id_user', Auth::id())
+                                    ->where('t.status', 'PAID')
+                                    ->count();
+                                
+                                ?>
+                                @if ($cek > 0)
+                                    <a href="{{ url('belajar') }}/{{ $detail->id }}" class="mt-3 btn btn-sm btn-danger"
+                                        style="border-radius: 50px">
+                                        <i class="bi bi-eye"></i> Mulai Belajar
+                                    </a>
+                                @else
+                                    <button onclick="toCart({{ $detail->id }})" class="mt-3 btn btn-sm btn-danger"
+                                        style="border-radius: 50px">
+                                        <i class="bi bi-cart"></i> Beli
+                                    </button>
+                                @endif
+                            @else
+                                <a href="{{ url('login') }}" class="mt-3 btn btn-sm btn-danger"
+                                    style="border-radius: 50px">
+                                    <i class="bi bi-cart"></i> Login untuk beli
+                                </a>
+                            @endif
+                            <a href="https://wa.me/6281271449921?text=Halo%20saya%20tertarik%20untuk%20bertanya%20tentang%20ebook%20{{ $detail->judul_produk }} dari {{ url('') }}/{{ $detail->slug }}"
+                                class="mt-3 btn btn-sm btn-success" style="border-radius: 50px">
+                                <i class="bi bi-whatsapp"></i> Hubungi
+                            </a>
+
+                            <br /><br />
+                            <hr>
+                            <b>Deskripsi</b>
+                            <p>
+                                <?php echo nl2br($detail->deskripsi); ?>
+                            </p>
+                            <br>
+                            <hr>
+                            <h4 class="mt-5">Komentar</h4>
+                            <form id="form">
+                                @if (Auth::check())
+                                    <input type="hidden" name="id_produk" id="id_produk" value="{{ $detail->id }}">
+                                    <input type="hidden" name="slug" id="slug">
+                                    <textarea name="pesan" id="pesan" class="form-control mb-4" cols="30" rows="5"
+                                        placeholder="Komentar"></textarea>
                                     <button class="btn btn-primary" id="tombol_kirim">
                                         <i class="bi bi-send"></i> Kirim
                                     </button>
-                                </form>
-                                <br /><br />
-                            @else
-                                <div class="alert alert-info">
-                                    <i class="bi bi-door-closed"></i> Login untuk mulai ikut berdiskusi
-                                </div>
-                            @endif
-                            <div id="diskusi">
+
+                                    <br /><br />
+                                @else
+                                    <div class="alert alert-info">
+                                        <i class="bi bi-door-closed"></i> Login untuk mulai ikut berdiskusi
+                                    </div>
+                                @endif
+                            </form>
+                            <div id="diskusi" class="mb-4">
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
 
     </div>
     <div class="container mt-5">
         <div class="row">
             {{-- daftar produk --}}
-            <h4 class="px-4">Daftar Produk</h4>
+            <h4 class="px-4">Daftar Ebook</h4>
             @include('frontend.components.list-produk', ['data' => $produk])
 
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div id="foto" style="margin-left: auto; margin-right: auto;">
+            </div>
         </div>
     </div>
 @endsection
 @push('script')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.all.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            getData()
-        })
-
-        let url = window.location.href
-
-        let newsSplit = url.split('/')
-        let newsId = newsSplit[newsSplit.length - 1];
-
-        document.getElementById('id_produk').value = newsId
-
-        function getData() {
-            axios.get('/back/diskusi-produk/' + newsId).then(function(res) {
-                let data = res.data.data
-
-                console.log(data);
-
-                let diskusi = ''
-
-                data.forEach(e => {
-
-                    diskusi += `<p style="font-size: 12px; margin-top: 20px; margin-bottom: 5px">
-                                    <i class="bi bi-people"></i> ${e.name} |
-                                    <i class="mx-1 bi bi-calendar"></i> ${e.created_at}
-                                </p>
-                                ${e.pesan}
-                                `
-                });
-
-
-                document.getElementById('diskusi').innerHTML = diskusi
-            })
-        }
-
-        form.onsubmit = (e) => {
-
-            let formData = new FormData(form);
-
-            e.preventDefault();
-
-            document.getElementById("tombol_kirim").disabled = true;
-
-            axios({
-                    method: 'post',
-                    url: '/back/store-diskusi-produk',
-                    data: formData,
-                })
-                .then(function(res) {
-                    //handle success         
-                    if (res.data.responCode == 1) {
-
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Sukses',
-                            text: res.data.respon,
-                            timer: 3000,
-                            showConfirmButton: false
-                        })
-
-                        document.getElementById("form").reset();
-                        getData()
-
-                    } else {
-                        //error validation
-                        // document.getElementById('password_alert').innerHTML = res.data.respon.password ?? ''
-                        // document.getElementById('email_alert').innerHTML = res.data.respon.email ?? ''
-                    }
-
-                    document.getElementById("tombol_kirim").disabled = false;
-                })
-                .catch(function(res) {
-                    //handle error
-                    console.log(res);
-                    document.getElementById("tombol_kirim").disabled = false;
-                });
-        }
-    </script>
+    <script src="{{ asset('js/frontend/produk-detail.js') }}"></script>
 @endpush

@@ -51,7 +51,7 @@ class DiskusiProdukController extends Controller
                         'users.name', 
                         'produks.judul_produk'
                     )
-                    ->where('diskusi_produks.id_produk', $id)
+                    ->where('produks.slug', $id)
                     ->get();
 
 

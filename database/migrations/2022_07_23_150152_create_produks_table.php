@@ -31,8 +31,11 @@ class CreateProduksTable extends Migration
             $table->string('gambar_4');
 
             $table->string('harga');
+            $table->integer('diskon');
 
             $table->string('stok');
+
+            $table->string('slug');
 
             $table->timestamps();
         });

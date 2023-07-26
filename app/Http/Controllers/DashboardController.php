@@ -22,6 +22,11 @@ class DashboardController extends Controller
         $diskusi_produk = DB::table('diskusi_produks')->where('id_user', $data_user->id)->count();
         $diskusi_berita = DB::table('diskusi_beritas')->where('id_user', $data_user->id)->count();
 
+        if(Auth::user()->role == 'User'){
+
+            return redirect('account/'.Auth::id());
+        }
+
         return view('backend.dashboard',[
             'total_produk'  => $total_produk, 
             'produk_user'   => $produk_user,

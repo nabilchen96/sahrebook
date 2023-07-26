@@ -52,7 +52,8 @@ class UserController extends Controller
                 'name'          => $request->name,
                 'role'          => $request->role,
                 'email'         => $request->email,
-                'password'      => Hash::make($request->password)
+                'password'      => Hash::make($request->password), 
+                'no_hp'         => $request->no_hp
             ]);
 
             $data = [
@@ -82,7 +83,8 @@ class UserController extends Controller
                 'name'      => $request->name,
                 'role'      => $request->role,
                 'email'     => $request->email,
-                'password'  => $request->password ? Hash::make($request->password) : $user->password
+                'password'  => $request->password ? Hash::make($request->password) : $user->password, 
+                'no_hp'     => $request->no_hp
             ]);
 
             $data = [

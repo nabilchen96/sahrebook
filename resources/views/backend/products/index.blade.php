@@ -43,6 +43,7 @@
                                     <th width="5%"></th>
                                     <th width="5%"></th>
                                     <th width="5%"></th>
+                                    <th width="5%"></th>
                                 </tr>
                             </thead>
                         </table>
@@ -74,22 +75,20 @@
                         <div class="form-group">
                             <label for="exampleInputPassword1">Jenis Produk</label>
                             <select name="jenis_produk" class="form-control" id="jenis_produk">
-                                <option>Fashion</option>
-                                <option>Elektronik</option>
-                                <option>Makanan</option>
-                                <option>Minuman</option>
-                                <option>Hobi</option>
-                                <option>Rumah Tangga</option>
-                                <option>Otomotif</option>
-                                <option>Olahraga</option>
-                                <option>Alat Tulis</option>
-                                <option>Kosmetik</option>
-                                <option>Obat</option>
+                                <option>Flutter</option>
+                                <option>Laravel</option>
+                                <option>Vue Js</option>
+                                <option>React</option>
+                                <option>PHP</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Harga</label>
                             <input name="harga" id="harga" type="number" placeholder="Harga" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Diskon</label>
+                            <input name="diskon" id="diskon" type="number" placeholder="diskon" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Gambar 1 <span class="text-danger" style="font-size: 12px;">(Max size:
@@ -223,6 +222,13 @@
                     },
                     {
                         render: function(data, type, row, meta) {
+                            return `<a href="/back/detail-product/${row.id}" class="text-primary">
+                                    <i class="bi bi-eye" style="font-size: 1.5rem;"></i>
+                                </a>`
+                        }
+                    },
+                    {
+                        render: function(data, type, row, meta) {
                             return `<a data-toggle="modal" data-target="#modal"
                                     data-bs-id=` + (row.id) + ` href="javascript:void(0)">
                                     <i style="font-size: 1.5rem;" class="text-success bi bi-grid"></i>
@@ -261,6 +267,7 @@
                 modal.find('#deskripsi').val(cokData[0].deskripsi)
                 modal.find('#harga').val(cokData[0].harga)
                 modal.find('#jenis_produk').val(cokData[0].jenis_produk)
+                modal.find('#diskon').val(cokData[0].diskon)
             }
         })
 

@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Sumsel Crafters</title>
+    <title>SAHRE BOOK</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('skydash/vendors/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('skydash/vendors/ti-icons/css/themify-icons.css') }}">
@@ -19,7 +19,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('skydash/css/vertical-layout-light/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('logosc.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('sahretech.png') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     @stack('style')
     <style>
@@ -70,24 +70,24 @@
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
                 <a class="navbar-brand brand-logo mr-5" style="color: white; font-size: 16px; margin-left: 20px;"
                     href="{{ url('/') }}">
-                    {{-- <img src="{{ asset('logosc.png') }}" class="mr-2" alt="logo" /> --}}
-                    SUMSEL CRAFTERS
+                    <img src="{{ asset('sahretech.png') }}" style="height: 26px;" class="mr-2" alt="logo" />
+                    SAHRE BOOK
                 </a>
                 <a class="navbar-brand brand-logo-mini" style="color: white;" href="{{ url('/') }}">
                     {{-- <img src="{{ asset('logosc.png') }}" alt="logo" /> --}}
-                    SC
+                    SB
                 </a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <button style="padding-left: 0;" class="navbar-toggler navbar-toggler align-self-center" type="button"
                     data-toggle="minimize">
-                    <span class="icon-menu"></span>
+                    <span class="bi bi-list"></span>
                 </button>
 
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="{{ asset('foto_profil') }}/{{ DB::table('user_profils')->where('id_user', Auth::user()->id)->value('foto_profil') ?? 'logosc.png' }}" alt="profile" />
+                            <img src="{{ asset('sahretech.png') }}" alt="profile" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                             aria-labelledby="profileDropdown">
@@ -105,7 +105,7 @@
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                     data-toggle="offcanvas">
-                    <span class="icon-menu"></span>
+                    <span class="bi bi-list"></span>
                 </button>
             </div>
         </nav>
@@ -191,6 +191,9 @@
     <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.all.min.js"></script>
     <!-- End custom js for this page-->
+
+    
+
     @stack('script')
 </body>
 

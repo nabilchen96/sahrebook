@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
     <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
-    <link rel="shortcut icon" href="{{ asset('logosc.png') }}" />
-    <title>SUMSEL CRAFTERS</title>
+    <link rel="shortcut icon" href="{{ asset('sahretech.png') }}" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.bootstrap5.min.css">
+    <title>SAHRE BOOK</title>
     <style>
         .card {
             border-radius: 10px;
@@ -63,7 +65,8 @@
             border-radius: 10px 10px 0 0;
             object-fit: cover;
             /* aspect-ratio: 1/1; */
-            height: 150px;
+            height: 284px;
+            /* height: 100%; */
         }
     </style>
     @stack('style')
@@ -75,9 +78,9 @@
             <div class="container py-2 px-3">
                 <a class="navbar-brand py-0" href="{{ url('/') }}">
                     <div class="float-left tentang">
-                        <img src="{{ url('logosc.png') }}" height="45" alt="">
-                        <div style="margin-left: 10px; margin-top: auto; margin-bottom: auto;">
-                            <h6 class="">SUMSEL CRAFTERS</h6>
+                        <img src="{{ url('sahretech.png') }}" height="25" alt="">
+                        <div style="margin-left: 10px; margin-top: 3px; margin-bottom: auto;">
+                            <h6 class="">SAHRE BOOK</h6>
                         </div>
                     </div>
                 </a>
@@ -93,13 +96,7 @@
                                 style="margin-right: 20px">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('produk') }}" style="margin-right: 20px">Produk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('berita') }}" style="margin-right: 20px">Berita</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tentang.html" style="margin-right: 20px">Tentang</a>
+                            <a class="nav-link" href="{{ url('produk') }}" style="margin-right: 20px">Buku</a>
                         </li>
                         <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modalcari">
                             <a href="javascript:void(0)" class="btn btn-primary mb-1"
@@ -108,9 +105,23 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('login') }}" class="btn btn-primary" style="border-radius: 50px">
-                                Login
-                            </a>
+                            @if (Auth::check())
+                                <a href="{{ url('account') }}/{{ auth::id() }}" class="btn btn-primary"
+                                    style="border-radius: 50px">
+                                    <i class="bi bi-person"></i> Account
+                                </a>
+                                <a href="{{ url('cart') }}" class="btn btn-primary position-relative"
+                                    style="border-radius: 50px">
+                                    <i class="bi bi-cart"></i>
+                                    <div id="notif">
+
+                                    </div>
+                                </a>
+                            @else
+                                <a href="{{ url('login') }}" class="btn btn-primary" style="border-radius: 50px">
+                                    Login
+                                </a>
+                            @endif
                         </li>
                     </ul>
                 </div>
@@ -128,7 +139,8 @@
                 <form method="GET" action="{{ url('produk') }}">
                     {{-- @csrf --}}
                     <div class="modal-body">
-                        <input type="text" class="form-control" name="cari" placeholder="Cari Pempek Palembang..." required>
+                        <input type="text" class="form-control" name="cari" placeholder="laravel ..."
+                            required>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">
@@ -145,18 +157,21 @@
     <br /><br>
     {{-- maps --}}
     <div class="mt-5" style="min-height: 200px; background: #f6f6f6">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.3829541449463!2d104.7545615152989!3d-2.9910576978216468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b7606b5245b43%3A0xdc206fa2daf3249a!2sKantor%20Walikota%20Palembang!5e0!3m2!1sid!2sid!4v1658304675313!5m2!1sid!2sid"
-            width="100%" height="300" style="border: 0" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="text-center py-4">
-            Copyright ©2022 All rights reserved | Created By Nabil <a target="_blank" href="https://sahretech.com">sahretech</a>
+            Copyright ©2022 All rights reserved | Created By Nabil <a target="_blank"
+                href="https://sahretech.com">sahretech</a>
         </div>
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
 
     <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/frontend/app.js') }}"></script>
     @stack('script')
 </body>
 

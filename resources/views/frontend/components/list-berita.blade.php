@@ -18,7 +18,7 @@
         @empty
             <div class="col-lg-12 text-center mt-5">
                 <img src="{{ asset('search.svg') }}" width="300px" height="300px" alt="">
-                <h4 class="mt-2">Oop!, data yang anda cari tidak ditemukan</h4>
+                <h4 class="mt-2">Oops!, data yang anda cari tidak ditemukan</h4>
                 <h6>Coba cari dengan kata kunci yang mendekati</h6>
             </div>
         @endforelse

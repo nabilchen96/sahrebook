@@ -6,14 +6,14 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-image: linear-gradient(transparent, black),
-            url('{{ asset('batik.jpg') }}') !important;
+            url('{{ asset('https://cdn.pixabay.com/photo/2018/08/18/13/25/gui-3614763_1280.png') }}') !important;
         min-height: 200px;
         ">
         <div class="container px-3 py-4">
             <div class="tentang text-white">
                 <div style="margin-top: auto; margin-bottom: auto">
-                    <h2>Daftar Produk</h2>
-                    Temukan produk terbaik UKM disini
+                    <h2>Daftar Ebook</h2>
+                    Temukan Ebook Pemrograman Lainnya
                 </div>
                 <!-- <img src="shop-illustration.svg" width="300px" alt="" /> -->
             </div>

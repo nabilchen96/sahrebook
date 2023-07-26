@@ -45,7 +45,8 @@ class ProdukController extends Controller
             'deskripsi'     => 'required', 
             'jenis_produk'  => 'required', 
             'deskripsi'     => 'required',
-            'harga'         => 'required',     
+            'harga'         => 'required',   
+            'diskon'        => 'required'  
         ]);
 
         if($validator->fails()){
@@ -75,6 +76,10 @@ class ProdukController extends Controller
             $gambar_4->move('gambar_produk', $nama_gambar_4);
         }
 
+        //make slug
+        $slug = strtolower($request->judul_produk); // Mengubah huruf kapital menjadi huruf kecil
+        $slug = preg_replace('/[^a-z0-9-]+/', '-', $slug); // Menghapus karakter selain huruf kecil, angka, dan tanda minus
+
         //proses insert
         $insert = Produk::insert([
             'judul_produk'  => $request->judul_produk, 
@@ -86,7 +91,9 @@ class ProdukController extends Controller
             'gambar_2'      => $nama_gambar_2 ?? "",
             'gambar_3'      => $nama_gambar_3 ?? "",
             'gambar_4'      => $nama_gambar_4 ?? "",
-            'stok'          => '9'
+            'stok'          => '9', 
+            'diskon'        => $request->diskon, 
+            'slug'          => $slug
         ]);
 
         return response()->json([
@@ -112,6 +119,7 @@ class ProdukController extends Controller
             'jenis_produk'  => 'required', 
             'deskripsi'     => 'required',
             'harga'         => 'required',     
+            
         ]);
 
         if($validator->fails()){
@@ -142,6 +150,11 @@ class ProdukController extends Controller
             $gambar_4->move('gambar_produk', $nama_gambar_4);
         }
 
+        //make slug
+        $slug = strtolower($request->judul_produk); // Mengubah huruf kapital menjadi huruf kecil
+        $slug = preg_replace('/[^a-z0-9-]+/', '-', $slug); // Menghapus karakter selain huruf kecil, angka, dan tanda minus
+
+
         //proses insert
         $produk = Produk::find($request->id);
         $insert = $produk->update([
@@ -154,7 +167,9 @@ class ProdukController extends Controller
             'gambar_2'      => $nama_gambar_2 ?? $produk->gambar_2,
             'gambar_3'      => $nama_gambar_3 ?? $produk->gambar_3,
             'gambar_4'      => $nama_gambar_4 ?? $produk->gambar_4,
-            'stok'          => '9'
+            'stok'          => '9', 
+            'diskon'        => $request->diskon, 
+            'slug'          => $slug
         ]);
 
         return response()->json([
@@ -203,7 +218,13 @@ class ProdukController extends Controller
     public function detail($id){
 
         //detail produk
-        $detail = Produk::join('users', 'users.id', '=', 'produks.id_user')->where('produks.id', $id)->first();
+        $detail = Produk::join('users', 'users.id', '=', 'produks.id_user')
+                    ->where('produks.slug', $id)
+                    ->select(
+                        'produks.*', 
+                        'users.name',
+                    )
+                    ->first();
 
         //list produk
         $produk = Produk::join('users', 'users.id', '=', 'produks.id_user')

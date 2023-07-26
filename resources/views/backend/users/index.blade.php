@@ -44,6 +44,7 @@
                                     <th width="5%">No</th>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>No Telegram / Whatsapp</th>
                                     <th>Role</th>
                                     <th width="5%"></th>
                                     <th width="5%"></th>
@@ -82,6 +83,11 @@
                             <input name="password" id="password" type="password" placeholder="Password"
                                 class="form-control form-control-sm" id="exampleInputPassword1">
                             <span class="text-danger error" style="font-size: 12px;" id="password_alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">No Telegram / Whatsapp</label>
+                            <input name="no_hp" id="no_hp" type="no_hp" placeholder="no_hp"
+                                class="form-control form-control-sm">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Role</label>
@@ -127,6 +133,9 @@
                     },
                     {
                         data: "email"
+                    },
+                    {
+                        data: "no_hp"
                     },
                     {
                         render: function(data, type, row, meta) {
@@ -179,6 +188,7 @@
                 modal.find('#email').val(cokData[0].email)
                 modal.find('#name').val(cokData[0].name)
                 modal.find('#role').val(cokData[0].role)
+                modal.find('#no_hp').val(cokData[0].no_hp)
             }
         })
 
