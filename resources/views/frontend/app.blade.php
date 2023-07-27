@@ -64,9 +64,7 @@
         .foto_berita {
             border-radius: 10px 10px 0 0;
             object-fit: cover;
-            /* aspect-ratio: 1/1; */
-            height: 284px;
-            /* height: 100%; */
+            height: 100%;
         }
     </style>
     @stack('style')
