@@ -64,7 +64,7 @@
                     </a>
                 </nav>
             </div>
-            <div class="container px-4 mt-4">
+            <div class="container-fluid px-4 mt-4">
                 <div class="card" style="border: none;">
                     <div class="card-body p-5">
                         <h2>🚀 {{ $konten->judul_detail_produk }}</h2>
