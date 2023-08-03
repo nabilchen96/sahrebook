@@ -342,7 +342,7 @@
                             
                                 ?>
 
-                                {!! str_replace($charactersToRemove, '', $konten->isi_detail_produk) !!}
+                                {!! str_replace($charactersToRemove, '', $content) !!}
 
                             </div>
                         </div>
