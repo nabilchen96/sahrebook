@@ -128,13 +128,13 @@
     </script>
 
     <script>
-        // // Get all <img> elements on the page
-        // var imgElements = document.querySelectorAll('img');
+        // Get all <img> elements on the page
+        var imgElements = document.querySelectorAll('img');
 
-        // // Loop through each <img> element and add the desired class
-        // imgElements.forEach(function(imgElement) {
-        //     imgElement.classList.add('img-fluid', 'shadow');
-        // });
+        // Loop through each <img> element and add the desired class
+        imgElements.forEach(function(imgElement) {
+            imgElement.classList.add('img-fluid');
+        });
     </script>
     <script>
         var pres = document.getElementsByTagName("pre");
