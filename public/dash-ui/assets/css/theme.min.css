@@ -6492,10 +6492,6 @@ fieldset:disabled .btn {
         left: auto;
         right: 0
     }
-
-    .img-fluid{
-        max-width: 80%;
-    }
 }
 
 @media (min-width:1200px) {
@@ -6516,10 +6512,6 @@ fieldset:disabled .btn {
         left: auto;
         right: 0
     }
-
-    .img-fluid{
-        max-width: 80%;
-    }
 }
 
 @media (min-width:1400px) {
@@ -6539,10 +6531,6 @@ fieldset:disabled .btn {
     .dropdown-menu-xxl-end[data-bs-popper] {
         left: auto;
         right: 0
-    }
-
-    .img-fluid{
-        max-width: 80%;
     }
 }
 
