@@ -7,6 +7,8 @@ use DB;
 use Auth;
 use App\Models\DetailProduk;
 use Illuminate\Support\Str;
+use Illuminate\Support\HtmlString;
+
 
 
 class DetailProdukController extends Controller
@@ -97,11 +99,32 @@ class DetailProdukController extends Controller
 
                 // dd($data);
 
+        // $konten = new HtmlString(html_entity_decode($data->isi_detail_produk));
+
+        // dd($data->isi_detail_produk);
+
+        $konten = str_replace(['<', '>'], ['&lt;', '&gt;'], $data->isi_detail_produk);
+
+
+        // dd($konten);
         
         return view('backend.detail-produk.edit', [
             'data'  => $data, 
-            'id'    => $id
+            'id'    => $id, 
+            'konten'=> $konten
         ]);
+    }
+
+    public function getData($id){
+
+        $data = DB::table('detail_produks as dp')
+                ->where('dp.id', $id)
+                ->first();
+
+                // dd($data);
+
+        
+        return response()->json($data);
     }
 
     public function update(Request $request, $id){

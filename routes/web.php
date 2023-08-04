@@ -84,6 +84,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/back/update-detail-product/{id}', 'App\Http\Controllers\DetailProdukController@update');
         Route::post('/back/delete-detail-product', 'App\Http\Controllers\DetailProdukController@delete');
 
+        Route::get('/back/get-content/{id}', 'App\Http\Controllers\DetailProdukController@getData');
+
         //BERITA
         Route::get('/back/beritas', 'App\Http\Controllers\BeritaController@index');
         Route::get('/back/data-berita', 'App\Http\Controllers\BeritaController@data');
