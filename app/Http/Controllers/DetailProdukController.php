@@ -46,6 +46,11 @@ class DetailProdukController extends Controller
         // Simpan isi_pembahasan sebagai file di dalam public folder
         $isi_detail_produk = $request->input('isi_detail_produk');
 
+        // dd($isi_detail_produk);
+
+        $isi_detail_produk = str_replace('<pre class="ql-syntax" spellcheck="false">', '<pre><code class="hljs">', $isi_detail_produk);
+        $isi_detail_produk = str_replace('</pre>', '</pre></code>', $isi_detail_produk);
+
         $isi_detail_produk = html_entity_decode($isi_detail_produk);
 
 
@@ -96,22 +101,10 @@ class DetailProdukController extends Controller
         $data = DB::table('detail_produks as dp')
                 ->where('dp.id', $id)
                 ->first();
-
-                // dd($data);
-
-        // $konten = new HtmlString(html_entity_decode($data->isi_detail_produk));
-
-        // dd($data->isi_detail_produk);
-
-        $konten = str_replace(['<', '>'], ['&lt;', '&gt;'], $data->isi_detail_produk);
-
-
-        // dd($konten);
         
         return view('backend.detail-produk.edit', [
             'data'  => $data, 
             'id'    => $id, 
-            'konten'=> $konten
         ]);
     }
 
@@ -134,6 +127,9 @@ class DetailProdukController extends Controller
         // Simpan data ke dalam database atau lakukan tindakan lain sesuai kebutuhan
         // Simpan isi_pembahasan sebagai file di dalam public folder
         $isi_detail_produk = $request->input('isi_detail_produk');
+
+        $isi_detail_produk = str_replace('<pre class="ql-syntax" spellcheck="false">', '<pre><code class="hljs">', $isi_detail_produk);
+        $isi_detail_produk = str_replace('</pre>', '</pre></code>', $isi_detail_produk);
 
         $isi_detail_produk = html_entity_decode($isi_detail_produk);
 

@@ -14,7 +14,10 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('dash-ui/assets/css/theme.min.css') }}" />
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css">
+
+
+
     <title>SAHRE BOOK</title>
     <style>
         .ql-align-center {
@@ -32,8 +35,8 @@
         pre {
             padding: 0.2rem 0.4rem;
             font-size: 16px;
-            color: #fff;
-            background-color: #212529 !important;
+            /* color: #fff; */
+            /* background-color: #212529 !important; */
             border-radius: 0.2rem;
             max-height: 500px;
         }
@@ -84,11 +87,11 @@
                         <div class="w-100">
 
                             <?php
-                                
-                                $content = str_replace('<kbd>', '<code class="quill-kbd">', $konten->isi_detail_produk);
-                                $content = str_replace('</kbd>', '</code>', $content);
-
-                                $charactersToRemove = ['&Acirc;', '&acirc;', '&#157;', '&#140;', '&#156;', '&#143;', '&iuml;', '&cedil;', '&#143;'];
+                            
+                            $content = str_replace('<pre>', '<pre><code class="hljs">', $konten->isi_detail_produk);
+                            $content = str_replace('</pre>', '</code></pre>', $content);
+                            
+                            $charactersToRemove = ['&Acirc;', '&acirc;', '&#157;', '&#140;', '&#156;', '&#143;', '&iuml;', '&cedil;', '&#143;'];
                             ?>
 
                             {!! str_replace($charactersToRemove, '', $content) !!}
@@ -112,12 +115,18 @@
     {{-- <script src='https://cdn.rawgit.com/Arlina-Design/redvision/cab7a72d/prisma.js' type='text/javascript'></script> --}}
     <script src="{{ asset('dash-ui/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('dash-ui/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/lib/highlight.min.js"></script>
+
 
     <!-- clipboard -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
 
     <!-- Theme JS -->
     <script src="{{ asset('dash-ui/assets/js/theme.min.js') }}"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
     <script>
         // Get all <img> elements on the page
         var imgElements = document.querySelectorAll('img');

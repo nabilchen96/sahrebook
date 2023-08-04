@@ -59,7 +59,11 @@
                         <div class="mb-3">
                             <label class="form-label">Isi Pembahasan <sup class="text-danger">*</sup></label>
                             <div id="editor">
-                                {!! $data->isi_detail_produk !!}
+                                <?php
+                                    $charactersToRemove = ['&Acirc;', '&acirc;', '&#157;', '&#140;', '&#156;', '&#143;', '&iuml;', '&cedil;', '&#143;'];    
+                                ?>
+                                {{-- {!! $data->isi_detail_produk !!} --}}
+                                {!! str_replace($charactersToRemove, '', $data->isi_detail_produk) !!}
                             </div>
                         </div>
                         <button id="tombol_kirim" class="btn btn-sm btn-primary" style="border-radius: 25px;">
