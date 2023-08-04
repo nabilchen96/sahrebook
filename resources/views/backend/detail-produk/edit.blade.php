@@ -58,7 +58,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Isi Pembahasan <sup class="text-danger">*</sup></label>
-                            <div id="editor">
+                            <div id="editor" style="height: 500px;">
                                 <?php
                                     $charactersToRemove = ['&Acirc;', '&acirc;', '&#157;', '&#140;', '&#156;', '&#143;', '&iuml;', '&cedil;', '&#143;'];    
                                 ?>
