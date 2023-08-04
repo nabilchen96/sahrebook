@@ -40,6 +40,10 @@
             border-radius: 0.2rem;
             max-height: 500px;
         }
+
+        img{
+            border: 1px solid #858d9399;
+        }
     </style>
 </head>
 
@@ -109,10 +113,6 @@
         </div>
     </div>
 
-    <!-- Scripts -->
-    <!-- Libs JS -->
-    {{-- <script src='https://cdn.rawgit.com/Arlina-Design/redvision/cab7a72d/prisma.js' type='text/javascript'></script> --}}
-    {{-- <script src='https://cdn.rawgit.com/Arlina-Design/redvision/cab7a72d/prisma.js' type='text/javascript'></script> --}}
     <script src="{{ asset('dash-ui/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('dash-ui/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/lib/highlight.min.js"></script>
@@ -128,33 +128,13 @@
     </script>
 
     <script>
-        // Get all <img> elements on the page
-        var imgElements = document.querySelectorAll('img');
+        // // Get all <img> elements on the page
+        // var imgElements = document.querySelectorAll('img');
 
-        // Loop through each <img> element and add the desired class
-        imgElements.forEach(function(imgElement) {
-            imgElement.classList.add('img-fluid', 'shadow');
-        });
-    </script>
-    <script>
-        // $('pre').attr('class', 'line-numbers');
-        // Prism.hooks.add("after-highlight", function(e) {
-        //     var t = e.element.parentNode;
-        //     if (!t || !/pre/i.test(t.nodeName) || t.className.indexOf("line-numbers") === -1) {
-        //         return
-        //     }
-        //     var n = 1 + e.code.split("\n").length;
-        //     var r;
-        //     lines = new Array(n);
-        //     lines = lines.join("<span></span>");
-        //     r = document.createElement("span");
-        //     r.className = "line-numbers-rows";
-        //     r.innerHTML = lines;
-        //     if (t.hasAttribute("data-start")) {
-        //         t.style.counterReset = "linenumber " + (parseInt(t.getAttribute("data-start"), 10) - 1)
-        //     }
-        //     e.element.appendChild(r)
-        // })
+        // // Loop through each <img> element and add the desired class
+        // imgElements.forEach(function(imgElement) {
+        //     imgElement.classList.add('img-fluid', 'shadow');
+        // });
     </script>
     <script>
         var pres = document.getElementsByTagName("pre");
