@@ -33,11 +33,11 @@
         }
 
         pre {
-            padding: 0.2rem 0.4rem;
-            font-size: 16px;
+            /* padding: 0.2rem 0.4rem; */
+            font-size: 14px;
             /* color: #fff; */
             /* background-color: #212529 !important; */
-            border-radius: 0.2rem;
+            /* border-radius: 0.2rem; */
             max-height: 500px;
         }
 
