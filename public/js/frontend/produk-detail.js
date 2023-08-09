@@ -26,7 +26,9 @@ function getData() {
 
             for (let index = 0; index < e.rating; index++) {
                 
-                rating += `<span style="margin-left: -5px; font-size: 23px; color: #ffc700;">★ </span>`
+                rating += `<span style="margin-left: -5px; font-size: 23px; color: #ffc700;">
+                    <i class="bi bi-star"></i>
+                </span>`
             }
 
             diskusi += `<p style="font-size: 12px; margin-bottom: 5px">
