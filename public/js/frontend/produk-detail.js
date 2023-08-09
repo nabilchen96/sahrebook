@@ -21,13 +21,16 @@ function getData() {
         let diskusi = ''
         let rating = ''
 
-        for (let index = 0; index < e.rating; index++) {
-            
-            rating += `<span style="margin-left: -5px; font-size: 23px; color: #ffc700;">★ </span>`
-        }
         
         data.forEach(e => {
 
+            rating = ''
+            
+            for (let index = 0; index < e.rating; index++) {
+                
+                rating += `<span style="margin-left: -5px; font-size: 23px; color: #ffc700;">★ </span>`
+            }
+            
             diskusi += `<p style="font-size: 12px; margin-bottom: 5px">
                             <i class="bi bi-people"></i> ${e.name} |
                             <i class="mx-1 bi bi-calendar"></i> ${e.created_at}
