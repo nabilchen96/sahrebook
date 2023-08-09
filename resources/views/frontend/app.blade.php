@@ -137,8 +137,7 @@
                 <form method="GET" action="{{ url('produk') }}">
                     {{-- @csrf --}}
                     <div class="modal-body">
-                        <input type="text" class="form-control" name="cari" placeholder="laravel ..."
-                            required>
+                        <input type="text" class="form-control" name="cari" placeholder="laravel ..." required>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">
@@ -170,6 +169,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
     <script src="{{ asset('js/frontend/app.js') }}"></script>
+    <!-- Default Statcounter code for sahrebook
+    https://sahrebook.com -->
+    <script type="text/javascript">
+        var sc_project = 12908410;
+        var sc_invisible = 1;
+        var sc_security = "3f88d2a7";
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img
+                    class="statcounter" src="https://c.statcounter.com/12908410/0/3f88d2a7/1/" alt="Web Analytics"
+                    referrerPolicy="no-referrer-when-downgrade"></a></div>
+    </noscript>
+    <!-- End of Statcounter Code -->
     @stack('script')
 </body>
 
