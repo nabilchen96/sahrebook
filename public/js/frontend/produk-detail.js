@@ -37,6 +37,7 @@ function getData() {
                         </p>
                         ${rating}<br>
                         ${e.pesan}
+                        <br><br>
                         `
         });
 
