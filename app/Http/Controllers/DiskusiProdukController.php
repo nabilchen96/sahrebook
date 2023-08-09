@@ -73,7 +73,8 @@ class DiskusiProdukController extends Controller
             $data = DiskusiProduk::create([
                 'pesan'     => $request->pesan, 
                 'id_produk' => $request->id_produk,
-                'id_user'   => Auth::user()->id ?? '2'
+                'id_user'   => Auth::user()->id ?? '2',
+                'rating'    => $request->rating
             ]);
 
             $data = [
