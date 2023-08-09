@@ -36,6 +36,10 @@
             background-color: #2d4373;
             /* Warna latar belakang Facebook saat dihover */
         }
+        .image-preview{
+            position: sticky;
+            top: 90px;
+        }
     </style>
 @endpush
 @section('content')
@@ -65,45 +69,47 @@
     <div class="container d-flex justify-content-between mt-4 mb-5">
         <div class="row">
             <div class="col-lg-4 pe-4">
-                <a href="" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}">
-                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}');"
-                        class="card card-image shadow">
+                <div class="image-preview">
+                    <a href="" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}">
+                        <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_1 }}');"
+                            class="card card-image shadow">
+                        </div>
+                    </a>
+                    <div class="row mt-3">
+                        @if ($detail->gambar_2)
+                            <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}">
+                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}');"
+                                        class="shadow card card-image-small">
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
+                        @if ($detail->gambar_3)
+                            <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}">
+                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}');"
+                                        class="shadow card card-image-small">
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
+                        @if ($detail->gambar_4)
+                            <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}">
+                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}');"
+                                        class="shadow card card-image-small">
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
                     </div>
-                </a>
-                <div class="row mt-3">
-                    @if ($detail->gambar_2)
-                        <div class="col-2 mb-3" style="padding: 0 0 0 10px">
-                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}">
-                                <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_2 }}');"
-                                    class="shadow card card-image-small">
-                                </div>
-                            </a>
-                        </div>
-                    @endif
-                    @if ($detail->gambar_3)
-                        <div class="col-2 mb-3" style="padding: 0 0 0 10px">
-                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}">
-                                <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_3 }}');"
-                                    class="shadow card card-image-small">
-                                </div>
-                            </a>
-                        </div>
-                    @endif
-                    @if ($detail->gambar_4)
-                        <div class="col-2 mb-3" style="padding: 0 0 0 10px">
-                            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}">
-                                <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_4 }}');"
-                                    class="shadow card card-image-small">
-                                </div>
-                            </a>
-                        </div>
-                    @endif
+                    <br><br>
                 </div>
-                <br><br>
             </div>
             <div class="col-lg-8 px-4">
                 <div class="" style="min-height: 500px">
@@ -190,7 +196,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
 

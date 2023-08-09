@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\UserProfil;
 use App\Models\Produk;
+use Illuminate\Support\Facades\Hash;
 
 class UserProfilController extends Controller
 {
