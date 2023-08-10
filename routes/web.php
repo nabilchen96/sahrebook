@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// SITEMAP
+Route::get('/sitemap.xml', 'App\Http\Controllers\SitemapController@index');
+
 //LANDING
 Route::get('/', 'App\Http\Controllers\WelcomeController@index');
 
