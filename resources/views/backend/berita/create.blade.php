@@ -35,7 +35,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-12 col-xl-8 mb-xl-0">
-                    <h3 class="font-weight-bold text-white">Data Detail Produk</h3>
+                    <h3 class="font-weight-bold text-white">Tambah Berita</h3>
                 </div>
             </div>
         </div>
@@ -46,12 +46,32 @@
                 <div class="card-body">
                     <form id="form">
                         <div class="mb-3">
-                            <label class="form-label">Judul Detail Produk <sup class="text-danger">*</sup></label>
-                            <input type="text" placeholder="Judul Detail Produk" class="form-control"
-                                id="judul_detail_produk" name="judul_detail_produk" required>
+                            <label class="form-label">Judul Berita <sup class="text-danger">*</sup></label>
+                            <input type="text" placeholder="Judul Berita" class="form-control"
+                                id="judul" name="judul" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Isi Pembahasan <sup class="text-danger">*</sup></label>
+                            <label class="form-label">Kategori <sup class="text-danger">*</sup></label>
+                            <select name="kategori" id="kategori" class="form-control">
+                                <option>PHP</option>
+                                <option>Javascript</option>
+                                <option>Flutter</option>
+                                <option>Wordpress</option>
+                                <option>Internet</option>
+                                <option>Laravel</option>
+                                <option>Pemrograman</option>
+                                <option>Teori</option>
+                                <option>Tips & Trick</option>
+                                <option>Error</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Gambar Berita <sup class="text-danger">*</sup></label>
+                            <input type="file" placeholder="Gambar Berita" class="form-control"
+                                id="gambar" name="gambar" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Isi Berita <sup class="text-danger">*</sup></label>
                             <div id="editor" style="height: 500px;">
                             </div>
                         </div>
@@ -95,21 +115,31 @@
     </script>
 
     <script>
+
+
         form.onsubmit = (e) => {
 
             let formData = new FormData(form);
-
             e.preventDefault();
+
+            var selectedImage = document.getElementById('gambar').files[0];
+
+            // var FormData = new FormData(form);
+            formData.append('judul', document.getElementById('judul').value);
+            formData.append('deskripsi', quill.root.innerHTML);
+            formData.append('gambar', selectedImage); // Tambahkan gambar ke FormData
+            formData.append('kategori', document.getElementById('kategori').value);
+
 
             document.getElementById("tombol_kirim").disabled = true;
 
             axios({
                     method: 'post',
-                    url: '/back/store-detail-product/{{ $id }}',
-                    data: {
-                        'judul_detail_produk': document.getElementById('judul_detail_produk').value,
-                        'isi_detail_produk': quill.root.innerHTML
-                    },
+                    url: '/back/store-berita',
+                    data: formData, 
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
                 })
                 .then(function(res) {
                     //handle success         

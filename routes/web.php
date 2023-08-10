@@ -89,7 +89,9 @@ Route::group(['middleware' => 'auth'], function () {
         //BERITA
         Route::get('/back/beritas', 'App\Http\Controllers\BeritaController@index');
         Route::get('/back/data-berita', 'App\Http\Controllers\BeritaController@data');
+        Route::get('/back/create-berita', 'App\Http\Controllers\BeritaController@create');
         Route::post('/back/store-berita', 'App\Http\Controllers\BeritaController@store');
+        Route::get('/back/edit-berita/{id}', 'App\Http\Controllers\BeritaController@edit');
         Route::post('/back/update-berita', 'App\Http\Controllers\BeritaController@update');
         Route::post('/back/delete-berita', 'App\Http\Controllers\BeritaController@delete');
 

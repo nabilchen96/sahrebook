@@ -81,9 +81,9 @@
             @include('frontend.components.list-produk', ['data' => @$produk])
 
             {{-- list berita --}}
-            <h4 class="px-3 mt-5">Berita</h4>
+            <h4 class="px-3 mt-5">Artikel</h4>
             <a class="px-3" style="text-decoration: none;" href="{{ url('berita') }}">
-                Lihat Berita Lainnya
+                Lihat Artikel Lainnya
                 <i class="bi bi-newspaper"></i>
             </a>
             @include('frontend.components.list-berita', ['data' => @$berita])

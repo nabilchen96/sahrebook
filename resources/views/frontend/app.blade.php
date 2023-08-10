@@ -35,7 +35,7 @@
             /* number of lines to show */
             line-clamp: 2;
             -webkit-box-orient: vertical;
-            height: 42px;
+        height: 42px;
         }
 
         .nama_toko {
@@ -95,6 +95,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('produk') }}" style="margin-right: 20px">Buku</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('berita') }}" style="margin-right: 20px">Artikel</a>
                         </li>
                         <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modalcari">
                             <a href="javascript:void(0)" class="btn btn-primary mb-1"

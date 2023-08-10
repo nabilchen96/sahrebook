@@ -1,14 +1,18 @@
-<div class="col-lg-12 px-4">
-    <div class="row">
+<div class="col-12 list-produk">
+    <div class="row d-flex">
         @forelse ($data as $item)
-            <div class="col-lg-3 p-lg-2 p-1 col-6 mt-3">
-                <a href="{{ url('berita-detail') }}/{{ $item->id }}" style="text-decoration: none;"
+            <div class="col-lg-3 col-md-6 px-3 mt-3">
+                <a href="{{ url('berita-detail') }}/{{ $item->slug }}" style="text-decoration: none;"
                     class="card shadow">
-                    <img class="foto_berita" src="{{ asset('gambar_berita') }}/{{ $item->gambar }}" />
+                    <img class="img-fluid foto_berita" 
+                    src="{{ asset('gambar_berita') }}/{{ $item->gambar }}" style="
+                        height: 250px;
+                        object-fit: cover;"
+                    />
                     <div class="card-body">
                         <div class="card-text" style="font-size: 14px">
-                            <b class="judul_berita">{{ $item->judul }}</b>
-                            <p class="mt-2 deskripsi_singkat">{{ $item->deskripsi }}</p>
+                            <span class="judul_berita mb-3">{{ $item->judul }}</span>
+                            {{-- <p class="mt-2 deskripsi_singkat">{{ $item->deskripsi }}</p> --}}
                             <i class="bi bi-shop"></i>
                             <span style="margin-top: 10px">{{ $item->name }}</span>
                         </div>
