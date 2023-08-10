@@ -157,13 +157,14 @@
                                     <img class="img-fluid border" src="{{ asset('gambar_berita') }}/{{ $item->gambar }}"
                                         style="
                                 height: 80px;
+                                border-radius: 10px;
                                 width: 30%;
                                 margin-right: 10px;
                                 object-fit: cover;" />
                                     <div>
 
                                         <span class="badge bg-info">{{ $item->kategori }}</span>
-                                        <p class="mt-2 judul_berita">{{ $item->judul }}</p>
+                                        <p class="mb-0 mt-2 judul_berita">{{ $item->judul }}</p>
                                         
                                     </div>
                                 </div>
