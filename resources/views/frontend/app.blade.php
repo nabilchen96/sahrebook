@@ -13,6 +13,8 @@
     <link rel="shortcut icon" href="{{ asset('sahretech.png') }}" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.bootstrap5.min.css">
+    <meta name="description" content="Sahrebook Website Belajar Pemrograman Mudah, Cepat, Lengkap dan Murah">
+
     <title>SAHRE BOOK</title>
     <style>
         .card {
