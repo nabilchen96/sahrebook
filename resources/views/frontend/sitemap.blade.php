@@ -8,17 +8,17 @@
     </url>
     <url>
         <loc>https://sahrebook.com/produk</loc>
-        <lastmod>2023-08-10</lastmod>
+        <lastmod>2023-08-10T18:36:13+00:00</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://sahrebook.com/berita</loc>
-        <lastmod>2023-08-10</lastmod>
+        <lastmod>2023-08-10T18:36:13+00:00</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://sahrebook.com/login</loc>
-        <lastmod>2023-08-10</lastmod>
+        <lastmod>2023-08-10T18:36:13+00:00</lastmod>
         <changefreq>monthly</changefreq>
     </url>
     <url>
@@ -34,7 +34,11 @@
     @foreach ($produk as $item)
         <url>
             <loc>https://sahrebook.com/{{ $item->slug }}</loc>
-            <lastmod>{{ $item->updated_at }}</lastmod>
+            <?php
+                $originalDate = $item->updated_at;
+                $iso8601Date = date('c', strtotime($originalDate));
+            ?>
+            <lastmod>{{ $iso8601Date }}</lastmod>
         </url>
     @endforeach
     <?php
@@ -45,7 +49,11 @@
     @foreach ($berita as $item)
         <url>
             <loc>https://sahrebook.com/{{ $item->slug }}</loc>
-            <lastmod>{{ $item->created_at }}</lastmod>
+            <?php
+                $originalDate = $item->created_at;
+                $iso8601Date = date('c', strtotime($originalDate));
+            ?>
+            <lastmod>{{ $iso8601Date }}</lastmod>
         </url>
     @endforeach
 </urlset>
