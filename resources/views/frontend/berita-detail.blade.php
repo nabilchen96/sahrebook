@@ -97,9 +97,9 @@
 
                 <div class="" style="min-height: 500px;">
                     <div class="card-body p-0">
-                        <h4 class="mb-2 mt-4">
+                        <h1 style="font-size: 30px;" class="mb-3 mt-4">
                             {{ $detail->judul }}
-                        </h4>
+                        </h1>
                         <i class="bi bi-shop"></i>
                         {{ $detail->name }} |
                         <i class="bi bi-calendar"></i>

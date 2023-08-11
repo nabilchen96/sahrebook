@@ -43,7 +43,7 @@ class TagihanController extends Controller
                 'p.gambar_1',
                 't.total as tagihan_total'
             )
-            ->orderBy('invoice')
+            ->orderBy('t.created_at', 'DESC')
             ->get();
 
         return view('backend.tagihan.index', [

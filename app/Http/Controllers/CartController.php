@@ -29,6 +29,7 @@ class CartController extends Controller
                     'u.email', 
                     'u.no_hp'
                 )
+                ->orderBy('c.id', 'DESC')
                 ->get();
 
         return view('backend.cart.index', [
