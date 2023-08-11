@@ -91,7 +91,7 @@
         </a>
     </div>
 
-    <div class="container d-flex justify-content-between mt-4 mb-5">
+    <div class="container mt-4 mb-5">
         <div class="row">
             <div class="col-lg-9">
 
