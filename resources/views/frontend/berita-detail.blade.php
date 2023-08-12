@@ -172,6 +172,17 @@
                         </div>
                     </a>
                 @endforeach
+
+                <h4 class="mt-4">Kategori Artikel</h4>
+                <?php
+                    $kategori = DB::table('beritas')
+                                ->select('kategori')
+                                ->groupBy('kategori')
+                                ->get();
+                ?>
+                @foreach ($kategori as $item)
+                    <div class="badge bg-info" style="border-radius: 25px; font-size: 15px;">{{ $item->kategori }}</div>
+                @endforeach
             </div>
         </div>
     </div>

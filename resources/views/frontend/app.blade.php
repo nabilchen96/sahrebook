@@ -8,7 +8,7 @@
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="{{ asset('dash-ui/assets/libs/bootstrap-icons/font/bootstrap-icons.css') }}" />
     <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
     <link rel="shortcut icon" href="{{ asset('sahretech.png') }}" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
@@ -102,10 +102,10 @@
                             <a class="nav-link" href="{{ url('berita') }}" style="margin-right: 20px">Artikel</a>
                         </li>
                         <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modalcari">
-                            <a href="javascript:void(0)" class="btn btn-primary mb-1"
+                            <button class="btn btn-primary mb-1"
                                 style="margin-right: 5px; border-radius: 50px">
                                 <i class="bi bi-search"></i>
-                            </a>
+                            </button>
                         </li>
                         <li class="nav-item">
                             @if (Auth::check())

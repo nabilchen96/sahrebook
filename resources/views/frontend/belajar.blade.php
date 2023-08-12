@@ -5,13 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon/favicon.ico" />
-
     <!-- Libs CSS -->
     <link rel="stylesheet" href="{{ asset('dash-ui/assets/libs/bootstrap-icons/font/bootstrap-icons.css') }}" />
-
+    <link rel="shortcut icon" href="{{ asset('sahretech.png') }}" />
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('dash-ui/assets/css/theme.min.css') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css">
