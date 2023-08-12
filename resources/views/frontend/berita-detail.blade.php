@@ -164,7 +164,7 @@
                                     <div>
 
                                         <span class="badge bg-info">{{ $item->kategori }}</span>
-                                        <p class="mb-0 mt-2 judul_berita">{{ $item->judul }}</p>
+                                        <p class="mb-0 mt-2 judul_berita" style="height: fit-content;">{{ $item->judul }}</p>
                                         
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@
                                 ->get();
                 ?>
                 @foreach ($kategori as $item)
-                    <div class="badge bg-info" style="border-radius: 25px; font-size: 15px;">{{ $item->kategori }}</div>
+                    <div class="badge bg-info" style="margin-bottom: 5px; border-radius: 25px; font-size: 15px;">{{ $item->kategori }}</div>
                 @endforeach
             </div>
         </div>
