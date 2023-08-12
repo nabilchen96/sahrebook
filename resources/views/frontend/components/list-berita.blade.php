@@ -11,8 +11,9 @@
                     />
                     <div class="card-body">
                         <div class="card-text" style="font-size: 14px">
-                            <span class="judul_berita mb-3">{{ $item->judul }}</span>
-                            {{-- <p class="mt-2 deskripsi_singkat">{{ $item->deskripsi }}</p> --}}
+                            <span class="judul_berita">{{ $item->judul }}</span>
+                            <span class="badge bg-info mb-3">{{ $item->kategori }}</span>
+                            <br>
                             <i class="bi bi-shop"></i>
                             <span style="margin-top: 10px">{{ $item->name }}</span>
                         </div>
