@@ -48,7 +48,7 @@
     ?>
     @foreach ($berita as $item)
         <url>
-            <loc>https://sahrebook.com/{{ $item->slug }}</loc>
+            <loc>https://sahrebook.com/berita-detail/{{ $item->slug }}</loc>
             <?php
                 $originalDate = $item->created_at;
                 $iso8601Date = date('c', strtotime($originalDate));
