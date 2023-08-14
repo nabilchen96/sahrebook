@@ -149,23 +149,28 @@
             </div>
             <div class="col-lg-3">
                 <h4 class="mt-4">Artikel Lainnya</h4>
+                <a style="text-decoration: none;" href="{{ url('berita') }}">
+                    Lihat Artikel Lainnya
+                    <i class="bi bi-newspaper"></i>
+                </a>
                 @foreach ($berita as $item)
                     <a style="text-decoration: none;" href="{{ url('berita-detail') }}/{{ $item->slug }}">
                         <div class="card mt-3">
                             <div class="card-body p-2">
-                                <div class="d-flex justify-content-between">
+                                <div class="d-flex text-start">
                                     <img class="img-fluid border" src="{{ asset('gambar_berita') }}/{{ $item->gambar }}"
                                         style="
                                 height: 80px;
                                 border-radius: 10px;
-                                width: 30%;
+                                width: 80px;
                                 margin-right: 10px;
                                 object-fit: cover;" />
-                                    <div>
+                                    <div class="text-start">
 
-                                        <span class="badge bg-info">{{ $item->kategori }}</span>
-                                        <p class="mb-0 mt-2 judul_berita" style="height: fit-content;">{{ $item->judul }}</p>
-                                        
+                                        <span class="text-start badge bg-info">{{ $item->kategori }}</span>
+                                        <p class="text-start mb-0 mt-2 judul_berita" style="height: fit-content;">{{ $item->judul }}
+                                        </p>
+
                                     </div>
                                 </div>
                             </div>
@@ -175,13 +180,46 @@
 
                 <h4 class="mt-4">Kategori Artikel</h4>
                 <?php
-                    $kategori = DB::table('beritas')
-                                ->select('kategori')
-                                ->groupBy('kategori')
-                                ->get();
+                $kategori = DB::table('beritas')
+                    ->select('kategori')
+                    ->groupBy('kategori')
+                    ->get();
                 ?>
                 @foreach ($kategori as $item)
-                    <div class="badge bg-info" style="margin-bottom: 5px; border-radius: 25px; font-size: 15px;">{{ $item->kategori }}</div>
+                    <div class="badge bg-info" style="margin-bottom: 5px; border-radius: 25px; font-size: 15px;">
+                        {{ $item->kategori }}</div>
+                @endforeach
+
+                <h4 class="mt-4">Daftar Ebook</h4>
+                <a style="text-decoration: none;" href="{{ url('produk') }}">
+                    Lihat Ebook Lainnya
+                    <i class="bi bi-bag"></i>
+                </a>
+                <?php
+                $produk = DB::table('produks')->get();
+                ?>
+                @foreach ($produk as $item)
+                    <a style="text-decoration: none;" href="{{ url('produk-detail') }}/{{ $item->slug }}"
+                        class="card mt-3">
+                        <div class="card-body p-2">
+                            <div class="d-flex">
+                                <img class="img-fluid border" src="{{ asset('gambar_produk') }}/{{ $item->gambar_1 }}"
+                                    style="
+                            height: 80px;
+                            border-radius: 10px;
+                            width: 80px;
+                            margin-right: 10px;
+                            object-fit: cover;" />
+                                <div>
+
+
+                                    <p class="mb-0 judul_berita" style="height: fit-content;">{{ $item->judul_produk }}
+                                    </p>
+                                    <p class="mb-0"><b>Rp. {{ number_format($item->harga) }}</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 @endforeach
             </div>
         </div>
