@@ -18,6 +18,8 @@ class DashboardController extends Controller
 
         $berita_user    = DB::table('beritas')->where('id_user', $data_user->id)->count();
 
+        $total_user     = DB::table('users')->count();
+
         //diskusi
         $diskusi_produk = DB::table('diskusi_produks')->where('id_user', $data_user->id)->count();
         $diskusi_berita = DB::table('diskusi_beritas')->where('id_user', $data_user->id)->count();
@@ -32,7 +34,8 @@ class DashboardController extends Controller
             'produk_user'   => $produk_user,
             'berita_user'   => $berita_user,
             'diskusi_produk'=> $diskusi_produk, 
-            'diskusi_berita'=> $diskusi_berita
+            'diskusi_berita'=> $diskusi_berita, 
+            'total_user'    => $total_user
         ]);
     }
 }

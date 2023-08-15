@@ -74,7 +74,14 @@
                     },
                     {
                         render: function(data, type, row, meta) {
-                            return `${row.pesan}`
+                            
+                            let bintang = ''
+
+                            for (let index = 0; index < row.rating; index++) {
+                                bintang += `<span style="margin-left: -5px; font-size: 23px; color: #ffc700;">★ </span>`
+                            }
+
+                            return `${bintang} <br> ${row.pesan}`
                         }
                     },
                     {

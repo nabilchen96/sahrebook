@@ -20,10 +20,10 @@
                 <div class="card-people mt-auto">
                     <img src="{{ asset('skydash/images/dashboard/people.svg') }}" alt="people">
                     <div class="weather-info">
-                        <div class="d-flex">
-                            <div>
-                                <p>Total Produk di Sumsel Crafters</p>
-                                <h2 class="mb-0 font-weight-normal">
+                        <div class="d-flex text-end">
+                            <div class="text-end">
+                                <p class="text-end">Total Produk di Sumsel Crafters</p>
+                                <h2 class="text-end mb-0 font-weight-normal">
                                     <i class="bi bi-box-seam mr-2"></i> {{ $total_produk }} Produk
                                 </h2>
                             </div>
@@ -63,8 +63,8 @@
                 <div class="col-md-6 col-6 mb-4 mb-lg-0 stretch-card transparent">
                     <div class="card card-light-danger">
                         <div class="card-body">
-                            <p class="mb-4">Total Produk <br> Anda</p>
-                            <h2 class="mb-2">{{ $produk_user }}</h2>
+                            <p class="mb-4">Total User <br> Tedaftar</p>
+                            <h2 class="mb-2">{{ $total_user }}</h2>
                         </div>
                     </div>
                 </div>
