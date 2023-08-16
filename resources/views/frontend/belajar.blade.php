@@ -11,9 +11,6 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('dash-ui/assets/css/theme.min.css') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
-
-
 
     <title>SAHRE BOOK</title>
     <style>
@@ -129,11 +126,8 @@
 
     <script src="{{ asset('dash-ui/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('dash-ui/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/lib/highlight.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/lib/highlight.min.js"></script> --}}
 
-
-    <!-- clipboard -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
 
     <!-- Theme JS -->
     <script src="{{ asset('dash-ui/assets/js/theme.min.js') }}"></script>

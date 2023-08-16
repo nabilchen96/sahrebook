@@ -20,9 +20,16 @@ class BelajarController extends Controller
 
 
         $nextData = DB::table('detail_produks')
+                    ->where('id_produk', $id)
                     ->where('id', '>', Request('p') ?? $data[0]->id)
                     ->orderBy('id')
                     ->value('id');
+                    // ->get();
+
+                    // dd($nextData);
+                    // dd($id);
+                    // dd($data[0]->id);
+                    // dd(Request('p'));
 
         return view('frontend.belajar', [
             'id'        => $id, 
