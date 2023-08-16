@@ -1,5 +1,6 @@
 @extends('frontend.app')
 @push('style')
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css">
     <style>
         .card-image {
@@ -41,6 +42,32 @@
         .image-preview {
             position: sticky;
             top: 90px;
+        }
+
+        pre {
+            /* padding: 0.2rem 0.4rem; */
+            font-size: 14px;
+            padding-top: 40px;
+            /* padding-bottom: 30px; */
+            background-color: #2c323c;
+            position: relative;
+            max-height: 500px
+        }
+
+        pre::before {
+            padding-left: 20px !important;
+            font-size: 16px;
+            content: '💻 Script (Double Click untuk Menyeleksi Semua Kode)' !important;
+            position: absolute;
+            top: 0;
+            background-color: #03a9f4;
+            padding: 10px;
+            left: 0;
+            right: 0;
+            color: #fff !important;
+            text-transform: uppercase;
+            display: block;
+            font-weight: bold
         }
     </style>
     <style>
@@ -168,7 +195,8 @@
                                     <div class="text-start">
 
                                         <span class="text-start badge bg-info">{{ $item->kategori }}</span>
-                                        <p class="text-start mb-0 mt-2 judul_berita" style="height: fit-content;">{{ $item->judul }}
+                                        <p class="text-start mb-0 mt-2 judul_berita" style="height: fit-content;">
+                                            {{ $item->judul }}
                                         </p>
 
                                     </div>
@@ -318,5 +346,17 @@
             imgElement.classList.add('img-fluid');
             // imgElement.classList.add('shadow');
         });
+    </script>
+    <script>
+        var pres = document.getElementsByTagName("pre");
+        for (var i = 0; i < pres.length; i++) {
+            pres[i].addEventListener("dblclick", function() {
+                var selection = getSelection();
+                var range = document.createRange();
+                range.selectNodeContents(this);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }, false);
+        }
     </script>
 @endpush
