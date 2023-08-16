@@ -11,6 +11,7 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('dash-ui/assets/css/theme.min.css') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
 
 
 
@@ -28,17 +29,34 @@
             display: none;
         }
 
+        img {
+            border: 1px solid #858d9399;
+        }
+
         pre {
             /* padding: 0.2rem 0.4rem; */
             font-size: 14px;
-            /* color: #fff; */
-            /* background-color: #212529 !important; */
-            /* border-radius: 0.2rem; */
-            max-height: 500px;
+            padding-top: 40px;
+            /* padding-bottom: 30px; */
+            background-color: #2c323c;
+            position: relative;
+            max-height: 500px
         }
 
-        img{
-            border: 1px solid #858d9399;
+        pre::before {
+            padding-left: 20px !important;
+            font-size: 16px;
+            content: '💻 Script (Double Click untuk Menyeleksi Semua Kode)' !important;
+            position: absolute;
+            top: 0;
+            background-color: #03a9f4;
+            padding: 10px;
+            left: 0;
+            right: 0;
+            color: #fff !important;
+            text-transform: uppercase;
+            display: block;
+            font-weight: bold
         }
     </style>
 </head>
