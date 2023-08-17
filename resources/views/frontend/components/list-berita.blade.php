@@ -1,7 +1,7 @@
 <div class="col-12 list-produk">
     <div class="row d-flex">
         @forelse ($data as $item)
-            <div class="col-lg-3 col-md-6 px-3 mt-3">
+            <div class="col-lg-3 col-md-6 px-3 mt-3 mb-4">
                 <a href="{{ url('berita-detail') }}/{{ $item->slug }}" style="text-decoration: none;"
                     class="card shadow">
                     <img class="img-fluid foto_berita" 
