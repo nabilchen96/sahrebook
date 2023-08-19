@@ -26,6 +26,8 @@ class BeritaController extends Controller
                     ->select(
                         'users.name', 
                         'beritas.*'
+                    )->orderBy(
+                        'beritas.created_at', 'DESC'
                     );
 
         if($data_user->role == 'Admin'){
