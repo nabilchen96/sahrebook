@@ -154,20 +154,24 @@
                         </div>
 
                         <h4 class="mt-5">Diskusi</h4>
-                        @if (Auth::check())
-                            <form id="form">
-                                <input type="hidden" name="id_berita" id="id_berita">
-                                <textarea name="pesan" id="pesan" class="form-control mb-4" cols="30" rows="5" placeholder="Diskusi"></textarea>
-                                <button class="btn btn-primary" id="tombol_kirim">
-                                    <i class="bi bi-send"></i> Kirim
-                                </button>
-                            </form>
-                            <br /><br />
-                        @else
+                        {{-- @if (Auth::check()) --}}
+                        <form id="form">
+                            <input type="hidden" name="id_berita" id="id_berita" value="{{ $detail->id }}">
+                            <textarea required name="pesan" id="pesan" class="form-control mb-4" cols="30" rows="5"
+                                placeholder="Diskusi"></textarea>
+                            {!! NoCaptcha::display() !!}
+                            {!! NoCaptcha::renderJs() !!}
+                            <br>
+                            <button class="btn btn-primary" id="tombol_kirim">
+                                <i class="bi bi-send"></i> Kirim
+                            </button>
+                        </form>
+                        <br /><br />
+                        {{-- @else
                             <div class="alert alert-info">
                                 <i class="bi bi-door-closed"></i> Login untuk mulai ikut berdiskusi
                             </div>
-                        @endif
+                        @endif --}}
                         <div id="diskusi">
 
                         </div>
@@ -270,10 +274,10 @@
         let newsSplit = url.split('/')
         let newsId = newsSplit[newsSplit.length - 1];
 
-        document.getElementById('id_berita').value = newsId
+        // console.log(newsId);
 
         function getData() {
-            axios.get('/back/diskusi-berita/' + newsId).then(function(res) {
+            axios.get('/back/diskusi-berita/' + {{ $detail->id }}).then(function(res) {
                 let data = res.data.data
 
                 // console.log(data);
@@ -327,12 +331,29 @@
                         //error validation
                         // document.getElementById('password_alert').innerHTML = res.data.respon.password ?? ''
                         // document.getElementById('email_alert').innerHTML = res.data.respon.email ?? ''
+
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Gagal',
+                            text: 'Terjadi Kesalahan, Silahkan Ulangi Kembali',
+                            timer: 3000,
+                            showConfirmButton: false
+                        })
                     }
 
                     document.getElementById("tombol_kirim").disabled = false;
                 })
                 .catch(function(res) {
                     //handle error
+
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Gagal',
+                        text: 'Terjadi Kesalahan, Silahkan Ulangi Kembali',
+                        timer: 3000,
+                        showConfirmButton: false
+                    })
+
                     console.log(res);
                     document.getElementById("tombol_kirim").disabled = false;
                 });

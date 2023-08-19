@@ -246,6 +246,8 @@ class BeritaController extends Controller
                     )
                     ->where('beritas.slug', $id)->first();
 
+                    // dd($detail->id);
+
         //list produk
         $berita = Berita::join('users', 'users.id', '=', 'beritas.id_user')
                     ->select(

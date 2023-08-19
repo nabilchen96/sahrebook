@@ -61,8 +61,11 @@ class DiskusiBeritaController extends Controller
     public function store(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'pesan' => 'required'
+            'pesan' => 'required', 
+            'g-recaptcha-response' => 'required|captcha'
         ]);
+
+        // dd($request->all());
 
         if($validator->fails()){
             $data = [
@@ -73,7 +76,7 @@ class DiskusiBeritaController extends Controller
             $data = DiskusiBerita::create([
                 'pesan'     => $request->pesan, 
                 'id_berita' => $request->id_berita,
-                'id_user'   => Auth::user()->id ?? '2'
+                'id_user'   => Auth::user()->id ?? DB::table('users')->where('email', 'user@gmail.com')->value('id')
             ]);
 
             $data = [

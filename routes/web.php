@@ -39,6 +39,7 @@ Route::get('/berita', 'App\Http\Controllers\BeritaController@show');
 //DISKUSI DATA DEPAN
 Route::get('/back/diskusi-produk/{id}', 'App\Http\Controllers\DiskusiProdukController@dataDetail');
 Route::get('/back/diskusi-berita/{id}', 'App\Http\Controllers\DiskusiBeritaController@dataDetail');
+Route::post('/back/store-diskusi-berita', 'App\Http\Controllers\DiskusiBeritaController@store');
 
 //PROFIL DEPAN
 Route::get('/profil/{id}', 'App\Http\Controllers\UserProfilController@show');
@@ -107,7 +108,7 @@ Route::group(['middleware' => 'auth'], function () {
         //DISKUSI BERITA
         Route::get('/back/diskusi-berita', 'App\Http\Controllers\DiskusiBeritaController@index');
         Route::get('/back/data-diskusi-berita', 'App\Http\Controllers\DiskusiBeritaController@data');
-        Route::post('/back/store-diskusi-berita', 'App\Http\Controllers\DiskusiBeritaController@store');
+
         Route::post('/back/update-diskusi-berita', 'App\Http\Controllers\DiskusiBeritaController@update');
         Route::post('/back/delete-diskusi-berita', 'App\Http\Controllers\DiskusiBeritaController@delete');
 
@@ -123,12 +124,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/back/bayar/{id}', 'App\Http\Controllers\TagihanController@bayarTagihan');
     });
 
-    //DISKUSI
-    Route::post('/back/store-diskusi-produk', 'App\Http\Controllers\DiskusiProdukController@store');
-
     //ACCOUNT
     Route::get('/account/{id}', 'App\Http\Controllers\AccountController@index');
     Route::post('/store-account', 'App\Http\Controllers\AccountController@store');
+
+    //DISKUSI PRODUK
+    Route::post('/back/store-diskusi-produk', 'App\Http\Controllers\DiskusiProdukController@store');
 
     //CART
     Route::get('/cart', 'App\Http\Controllers\CartController@index');
