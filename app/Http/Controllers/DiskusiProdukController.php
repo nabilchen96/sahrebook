@@ -27,6 +27,8 @@ class DiskusiProdukController extends Controller
                         'diskusi_produks.*', 
                         'k.name', 
                         'produks.judul_produk'
+                    )->orderBy(
+                        'diskusi_produks.created_at', 'DESC'
                     );
 
         if($data_user->role == 'Admin'){

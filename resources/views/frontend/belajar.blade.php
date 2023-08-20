@@ -73,8 +73,8 @@
                 <!-- Navbar nav -->
                 <ul class="navbar-nav flex-column" id="sideNavbar">
                     @foreach ($data as $k => $item)
-                        <li class="mx-4">
-                            <a href="{{ url('belajar') }}/{{ $id }}?p={{ $item->id }}" class="text-white">
+                        <li id="{{ $item->id }}" class="mx-4">
+                            <a href="{{ url('belajar') }}/{{ $id }}?p={{ $item->id }}#{{ $item->id }}" class="{{ Request('p') == $item->id ? 'text-warning' : 'text-white'}}">
                                 <i class="bi bi-file-earmark-text"></i> <b>Part {{ $k + 1 }}</b>:
                                 {{ $item->judul_detail_produk }}
                             </a>
