@@ -43,9 +43,11 @@
         .table-striped tbody tr:nth-of-type(odd) {
             background-color: #9e9e9e21 !important;
         }
-        .table td{
+
+        .table td {
             white-space: unset;
         }
+
         ::-webkit-scrollbar {
             width: 15px;
         }
@@ -146,12 +148,12 @@
                             with <i class="ti-heart text-danger ml-1"></i></span>
                     </div>
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by 
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by
                             <a href="https://www.themewagon.com/" target="_blank">
                                 Themewagon
                             </a>
                         </span>
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Developed by 
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Developed by
                             <a href="https://www.sahretech.com/" target="_blank">
                                 Sahretech
                             </a>
@@ -192,7 +194,21 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.all.min.js"></script>
     <!-- End custom js for this page-->
 
-    
+
+    <!-- Default Statcounter code for sahrebook
+    https://sahrebook.com -->
+    <script type="text/javascript">
+        var sc_project = 12908410;
+        var sc_invisible = 1;
+        var sc_security = "3f88d2a7";
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img
+                    class="statcounter" src="https://c.statcounter.com/12908410/0/3f88d2a7/1/" alt="Web Analytics"
+                    referrerPolicy="no-referrer-when-downgrade"></a></div>
+    </noscript>
+    <!-- End of Statcounter Code -->
 
     @stack('script')
 </body>
