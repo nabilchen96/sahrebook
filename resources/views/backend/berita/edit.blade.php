@@ -56,6 +56,10 @@
                                 name="judul" required value="{{ $data->judul }}">
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Meta Deskripsi <sup class="text-danger">*</sup></label>
+                            <textarea maxlength="150" class="form-control" placeholder="Meta Deskripsi Max 150" name="meta_description" id="meta_description" cols="30" rows="5">{{$data->meta_description}}</textarea>
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">Kategori <sup class="text-danger">*</sup></label>
                             <select name="kategori" id="kategori" class="form-control">
                                 <option {{$data->kategori == 'PHP' ? 'selected' : ''}}>PHP</option>

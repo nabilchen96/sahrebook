@@ -47,8 +47,12 @@
                     <form id="form">
                         <div class="mb-3">
                             <label class="form-label">Judul Berita <sup class="text-danger">*</sup></label>
-                            <input type="text" placeholder="Judul Berita" class="form-control"
-                                id="judul" name="judul" required>
+                            <input type="text" placeholder="Judul Berita" class="form-control" id="judul"
+                                name="judul" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Meta Deskripsi <sup class="text-danger">*</sup></label>
+                            <textarea maxlength="150" class="form-control" placeholder="Meta Deskripsi Max 150" name="meta_description" id="meta_description" cols="30" rows="5"></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Kategori <sup class="text-danger">*</sup></label>
@@ -67,8 +71,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Gambar Berita <sup class="text-danger">*</sup></label>
-                            <input type="file" placeholder="Gambar Berita" class="form-control"
-                                id="gambar" name="gambar" required>
+                            <input type="file" placeholder="Gambar Berita" class="form-control" id="gambar"
+                                name="gambar" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Isi Berita <sup class="text-danger">*</sup></label>
@@ -115,8 +119,6 @@
     </script>
 
     <script>
-
-
         form.onsubmit = (e) => {
 
             let formData = new FormData(form);
@@ -136,7 +138,7 @@
             axios({
                     method: 'post',
                     url: '/back/store-berita',
-                    data: formData, 
+                    data: formData,
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

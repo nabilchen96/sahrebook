@@ -1,4 +1,7 @@
 @extends('frontend.app')
+@push('meta-description')
+    <meta name="description" content="Sahrebook Website Belajar Pemrograman Mudah, Cepat, Lengkap dan Murah">
+@endpush
 @section('content')
     <div class="shadow"
         style="

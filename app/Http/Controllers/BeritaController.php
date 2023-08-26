@@ -111,7 +111,8 @@ class BeritaController extends Controller
             'id_user'       => Auth::user()->id ?? 2,
             'kategori'      => $request->kategori, 
             'gambar'        => $nama_gambar,
-            'slug'          => $slug
+            'slug'          => $slug, 
+            'meta_description'  => $request->meta_description
         ]);
 
         return response()->json([
@@ -216,7 +217,8 @@ class BeritaController extends Controller
             'id_user'       => Auth::user()->id ?? 2,
             'kategori'      => $request->kategori, 
             'gambar'        => $nama_gambar ?? $berita->gambar,
-            'slug'          => $slug
+            'slug'          => $slug, 
+            'meta_description'  => $request->meta_description
         ]);
 
         return response()->json([

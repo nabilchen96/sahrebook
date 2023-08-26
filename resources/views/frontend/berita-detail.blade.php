@@ -1,4 +1,10 @@
 @extends('frontend.app')
+@push('meta-description')
+    <meta content="{{ $detail->meta_description }}" name="description">
+    <meta content='{{url('/')}}/{{ $detail->slug }}' property='og:url' />
+    <meta content='{{ $detail->judul }}' property='og:title' />
+    <link href='{{ asset('gambar_berita') }}/{{ $detail->gambar }}' rel='image_src'/>
+@endpush
 @push('style')
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css">
@@ -113,7 +119,7 @@
             <i class="bi bi-pinterest"></i>
         </a>
         <a style="background: #25d366;" target="_blank" class="share-button"
-            href="https://web.whatsapp.com/send?text=How to Make a Bubble Bottom Bar in Flutter | {{ url()->current() }}">
+            href="https://web.whatsapp.com/send?text={{ $detail->judul }} | {{ url()->current() }}">
             <i class="bi bi-whatsapp"></i>
         </a>
     </div>

@@ -1,4 +1,7 @@
 @extends('frontend.app')
+@push('meta-description')
+<meta name="description" content="Sahrebook Website Belajar Pemrograman Mudah, Cepat, Lengkap dan Murah">
+@endpush
 @section('content')
     {{-- slider --}}
     <div class="container px-3 mt-4">
