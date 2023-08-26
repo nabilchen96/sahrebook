@@ -74,7 +74,8 @@
                 <ul class="navbar-nav flex-column" id="sideNavbar">
                     @foreach ($data as $k => $item)
                         <li id="{{ $item->id }}" class="mx-4">
-                            <a href="{{ url('belajar') }}/{{ $id }}?p={{ $item->id }}#{{ $item->id }}" class="{{ Request('p') == $item->id ? 'text-warning' : 'text-white'}}">
+                            <a href="{{ url('belajar') }}/{{ $id }}?p={{ $item->id }}#{{ $item->id }}"
+                                class="{{ Request('p') == $item->id ? 'text-warning' : 'text-white' }}">
                                 <i class="bi bi-file-earmark-text"></i> <b>Part {{ $k + 1 }}</b>:
                                 {{ $item->judul_detail_produk }}
                             </a>
@@ -156,6 +157,20 @@
             }, false);
         }
     </script>
+    <!-- Default Statcounter code for sahrebook
+    https://sahrebook.com -->
+    <script type="text/javascript">
+        var sc_project = 12908410;
+        var sc_invisible = 1;
+        var sc_security = "3f88d2a7";
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img
+                    class="statcounter" src="https://c.statcounter.com/12908410/0/3f88d2a7/1/" alt="Web Analytics"
+                    referrerPolicy="no-referrer-when-downgrade"></a></div>
+    </noscript>
+    <!-- End of Statcounter Code -->
 </body>
 
 </html>

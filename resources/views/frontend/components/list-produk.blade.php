@@ -2,7 +2,8 @@
     <div class="row d-flex">
         @forelse ($data as $item)
             <div class="col-lg-3 col-md-6 px-3 mt-3">
-                <a href="{{ url('produk-detail') }}/{{ $item->slug }}" style="text-decoration: none;" class="card shadow mb-4">
+                <a href="{{ url('produk-detail') }}/{{ $item->slug }}" 
+                    style="text-decoration: none;" class="card shadow mb-4">
                     @if ($item->pilihan_ukm == '1')
                         <span class="badge bg-danger"
                             style="width: fit-content;
