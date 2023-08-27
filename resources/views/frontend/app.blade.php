@@ -36,7 +36,15 @@
             /* number of lines to show */
             line-clamp: 2;
             -webkit-box-orient: vertical;
-        height: 42px;
+            height: 42px;
+        }
+
+        ::-webkit-scrollbar-thumb:vertical {
+            background: #888 !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0.5rem;
         }
 
         .nama_toko {
@@ -101,8 +109,7 @@
                             <a class="nav-link" href="{{ url('berita') }}" style="margin-right: 20px">Artikel</a>
                         </li>
                         <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modalcari">
-                            <button class="btn btn-primary mb-1"
-                                style="margin-right: 5px; border-radius: 50px">
+                            <button class="btn btn-primary mb-1" style="margin-right: 5px; border-radius: 50px">
                                 <i class="bi bi-search"></i>
                             </button>
                         </li>

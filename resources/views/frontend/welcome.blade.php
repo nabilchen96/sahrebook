@@ -26,14 +26,7 @@
             margin-bottom: 0 !important;
         }
 
-        .nav:hover> ::-webkit-scrollbar-thumb {
-            visibility: visible;
-        }
-
-        ::-webkit-scrollbar {
-            width: 0.5rem;
-        }
-        .testimony-text{
+        .testimony-text {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
