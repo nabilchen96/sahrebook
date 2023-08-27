@@ -274,8 +274,7 @@ class BeritaController extends Controller
                     ->select(
                         'users.name', 
                         'beritas.*'
-                    )
-                    ->inRandomOrder()->paginate(8);
+                    )->paginate(8);
 
 
         return view('frontend.berita', [

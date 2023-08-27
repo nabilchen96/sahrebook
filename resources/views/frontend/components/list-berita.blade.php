@@ -14,7 +14,7 @@
                             <span class="judul_berita">{{ $item->judul }}</span>
                             <span class="badge bg-info mb-3">{{ $item->kategori }}</span>
                             <br>
-                            <i class="bi bi-shop"></i>
+                            <i class="bi bi-person-circle"></i>
                             <span style="margin-top: 10px">{{ $item->name }}</span>
                         </div>
                     </div>

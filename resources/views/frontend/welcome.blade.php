@@ -1,8 +1,45 @@
 @extends('frontend.app')
 @push('meta-description')
-<meta name="description" content="Sahrebook Website Belajar Pemrograman Mudah, Cepat, Lengkap dan Murah">
+    <meta name="description" content="Sahrebook Website Belajar Pemrograman Mudah, Cepat, Lengkap dan Murah">
 @endpush
 @section('content')
+    <style>
+        .nav-lt-tab .nav-item .nav-link.active {
+            border-top: 2.5px solid #624bff;
+        }
+
+        .nav {
+            display: inline-block;
+            overflow: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+            /* margin: 0 0 1em; */
+            white-space: nowrap;
+        }
+
+        .nav li {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .nav-item {
+            margin-bottom: 0 !important;
+        }
+
+        .nav:hover> ::-webkit-scrollbar-thumb {
+            visibility: visible;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0.5rem;
+        }
+        .testimony-text{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 190px;
+        }
+    </style>
     {{-- slider --}}
     <div class="container px-3 mt-4">
         {{-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -92,4 +129,5 @@
             @include('frontend.components.list-berita', ['data' => @$berita])
         </div>
     </div>
+    @include('frontend.components.testimoni', ['data' => @$review])
 @endsection

@@ -18,7 +18,7 @@
                             <span class="judul_produk">{{ $item->judul_produk }}</span>
                             <p class="mt-2"><b>Rp. {{ number_format($item->harga) }}</b></p>
                             <div class="nama_toko">
-                                <i class="bi bi-shop"></i>
+                                <i class="bi bi-person-circle"></i>
                                 <span style="margin-top: 10px">{{ $item->name }}</span>
                             </div>
                         </div>

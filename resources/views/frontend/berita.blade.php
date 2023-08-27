@@ -27,7 +27,9 @@
             {{-- list berita --}}
             <h4 class="px-3">Artikel</h4>
             @include('frontend.components.list-berita', ['data' => $berita])
-
+            <div class="mt-4">
+                {{ $berita->links() }}
+            </div>
         </div>
     </div>
 @endsection
