@@ -37,8 +37,6 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-
-            \App\Http\Middleware\TrackVisitor::class,
         ],
 
         'api' => [
@@ -66,5 +64,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
         'checkRole' => \App\Http\Middleware\CheckRole::class,
+        'TrackVisitor' => \App\Http\Middleware\TrackVisitor::class,
     ];
 }

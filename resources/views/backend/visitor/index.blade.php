@@ -23,7 +23,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-12 col-xl-8 mb-xl-0">
-                    <h3 class="font-weight-bold text-white">Data Visitor</h3>
+                    <h3 class="font-weight-bold text-white">Data Page View</h3>
                 </div>
             </div>
         </div>
@@ -37,8 +37,9 @@
                             <thead>
                                 <tr>
                                     <th width="5%">No</th>
-                                    <th>Address</th>
-                                    <th>Detail</th>
+                                    <th>URL</th>
+                                    <th>View</th>
+                                    {{-- <th width="5%"></th> --}}
                                 </tr>
                             </thead>
                         </table>
@@ -70,36 +71,16 @@
                     },
                     {
                         render: function(data, type, row, meta){
-                            return `
-                                <b>Ip Address</b><br>${row.ip_address}<br><br>
-                                <b>Location</b><br>${row.location}
-                            `
+                            return `${row.page_url}`
                         }
                     },
                     {
                         render: function(data, type, row, meta) {
-                            return `
-                                    <b>Page URL</b><br>${row.page_url}  <br><br>
-                                    <div class="d-flex justify-content-between">
-                                        <div class="mr-3">
-                                            <b>Device</b><br>${row.device}  
-                                        </div>
-                                        <div class="mr-3">
-                                            <b>Browser</b><br>${row.browser}
-                                        </div>
-                                        <div class="mr-3">
-                                            <b>Provider</b><br>${row.provider}
-                                        </div>
-                                        <div class="mr-3">
-                                            <b>OS</b><br>${row.os}
-                                        </div>
-                                        <div class="mr-3">
-                                            <b>Time</b><br>${row.created_at}
-                                        </div>
-                                    </div>
-                            `
+                            return `<div class="text-end">
+                                ${row.total} <i class="ml-2 bi bi-bar-chart"></i>
+                                </div>`
                         }
-                    }
+                    },
                 ]
             })
         }
