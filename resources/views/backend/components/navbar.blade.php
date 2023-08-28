@@ -57,5 +57,11 @@
                 <span class="menu-title">Tagihan</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('back/visitor') }}">
+                <i class="bi bi-bar-chart menu-icon"></i>
+                <span class="menu-title">Visitor</span>
+            </a>
+        </li>
     </ul>
 </nav>
