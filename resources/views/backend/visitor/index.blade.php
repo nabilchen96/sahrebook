@@ -37,9 +37,9 @@
                             <thead>
                                 <tr>
                                     <th width="5%">No</th>
+                                    <th width="5%" class="text-center">View</th>
                                     <th>URL</th>
-                                    <th>View</th>
-                                    {{-- <th width="5%"></th> --}}
+                                    <th width="5%"></th>
                                 </tr>
                             </thead>
                         </table>
@@ -70,15 +70,20 @@
                         }
                     },
                     {
+                        render: function(data, type, row, meta) {
+                            return `<div class="text-center">
+                                ${row.total}
+                                </div>`
+                        }
+                    },
+                    {
                         render: function(data, type, row, meta){
                             return `${row.page_url}`
                         }
                     },
                     {
-                        render: function(data, type, row, meta) {
-                            return `<div class="text-end">
-                                ${row.total} <i class="ml-2 bi bi-bar-chart"></i>
-                                </div>`
+                        render: function(data, type, row, meta){
+                            return `<i class="bi bi-bar-chart text-success" style="font-size: 1.5rem;"></i>`
                         }
                     },
                 ]
