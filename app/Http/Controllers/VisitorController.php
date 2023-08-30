@@ -59,16 +59,6 @@ class VisitorController extends Controller
             ->orderBy('total', 'DESC')
             ->get();
 
-        $first = DB::table('visitors')
-            ->select(
-                'page_url',
-                DB::raw('COUNT(page_url) as total')
-            )
-            ->get();
-
-        $combinedData = $data->concat($first);
-        $combinedData = $combinedData->sortByDesc('total')->values();
-
-        return response()->json(['data' => $combinedData]);
+        return response()->json(['data' => $data]);
     }
 }
