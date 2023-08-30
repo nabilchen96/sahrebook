@@ -30,6 +30,66 @@
     </div>
     <div class="row">
         <div class="col-12 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3 col-6 my-2">
+                            <div class="card border">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <span class="">Semua</span><br>
+                                        <span class="mt-2 badge bg-success text-white">
+                                            <b>{{ $totalSemua }}</b> 
+                                            <i class="text-white  ml-1 bi bi-eye"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 my-2">
+                            <div class="card border">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <span class="">Hari Ini</span><br>
+                                        <span class="mt-2 badge bg-success text-white">
+                                            <b>{{ $totalHariIni }}</b> 
+                                            <i class="text-white  ml-1 bi bi-eye"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 my-2">
+                            <div class="card border">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <span class="">Kemarin</span><br>
+                                        <span class="mt-2 badge bg-success text-white">
+                                            <b>{{ $totalKemarin }}</b> 
+                                            <i class="text-white  ml-1 bi bi-eye"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 my-2">
+                            <div class="card border">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <span class="">Bulan Ini</span><br>
+                                        <span class="mt-2 badge bg-success text-white">
+                                            <b>{{ $totalBulanIni }}</b> 
+                                            <i class="text-white  ml-1 bi bi-eye"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-3">
             <div class="card w-100">
                 <div class="card-body">
                     <div class="table-responsive">
