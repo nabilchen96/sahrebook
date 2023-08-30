@@ -34,7 +34,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="myTable" class="table table-striped" style="width: 100%;">
-                            <thead>
+                            <thead class="bg-dark text-white">
                                 <tr>
                                     <th width="5%">No</th>
                                     <th width="5%" class="text-center">View</th>
@@ -72,7 +72,7 @@
                     {
                         render: function(data, type, row, meta) {
                             return `<div class="text-center">
-                                ${row.total}
+                                    <span class="badge bg-success text-white">${row.total}</span>
                                 </div>`
                         }
                     },
@@ -83,7 +83,7 @@
                     },
                     {
                         render: function(data, type, row, meta){
-                            return `<i class="bi bi-bar-chart text-success" style="font-size: 1.5rem;"></i>`
+                            return `<i class="bi bi-grid text-success" style="font-size: 1.5rem;"></i>`
                         }
                     },
                 ]
