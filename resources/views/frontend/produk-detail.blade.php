@@ -242,12 +242,12 @@
                                     <b>Rp. {{ number_format($detail->harga) }}</b>
                                 @else
                                     <b>Rp. {{ number_format($detail->harga_asli) }}</b> <br>
-                                    <b class="text-white">Rp. {{ number_format($detail->harga) }}</b>
+                                    {{-- <b class="text-white">Rp. {{ number_format($detail->harga) }}</b> --}}
                                 @endif
                             </p>
                             
                             <a style="text-decoration: none;" href="{{ url('profil') }}/{{ $detail->id_user }}">
-                                <i class="bi bi-shop"></i>
+                                <i class="bi bi-person-circle"></i>
                                 {{ $detail->name }}
                             </a>
                             <br />
