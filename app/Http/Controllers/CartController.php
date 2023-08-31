@@ -24,6 +24,7 @@ class CartController extends Controller
                     'p.judul_produk', 
                     'p.jenis_produk',
                     'p.harga',
+                    'p.harga_asli',
                     'p.gambar_1', 
                     'c.updated_at', 
                     'u.email', 

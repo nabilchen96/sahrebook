@@ -33,12 +33,11 @@
                     </button>
                     <div class="table-responsive">
                         <table id="myTable" class="table table-striped" style="width: 100%;">
-                            <thead>
+                            <thead class="bg-dark text-white">
                                 <tr>
                                     <th width="5%">No</th>
                                     <th>Gambar</th>
                                     <th width="300px">Keterangan</th>
-                                    <th>Kategori</th>
                                     <th>Harga</th>
                                     <th width="5%"></th>
                                     <th width="5%"></th>
@@ -83,12 +82,12 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Harga</label>
-                            <input name="harga" id="harga" type="number" placeholder="Harga" class="form-control">
+                            <label>Harga Asli</label>
+                            <input name="harga_asli" id="harga_asli" type="number" placeholder="Harga Asli" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Diskon</label>
-                            <input name="diskon" id="diskon" type="number" placeholder="diskon" class="form-control">
+                            <label>Harga Diskon</label>
+                            <input name="harga" id="harga" type="number" placeholder="Harga" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Gambar 1 <span class="text-danger" style="font-size: 12px;">(Max size:
@@ -184,11 +183,16 @@
                         }
                     },
                     {
-                        data: "jenis_produk"
-                    },
-                    {
                         render: function(data, type, row, meta) {
-                            return `Rp. ${new Intl.NumberFormat().format(row.harga)}`
+                            return `
+                                <b>Jenis Produk</b>
+                                <br> ${row.jenis_produk} <br><br>
+
+                                <b>Harga Asli</b>
+                                <br> Rp. ${new Intl.NumberFormat().format(row.harga_asli)}<br><br> 
+
+                                <b>Diskon</b>
+                                <br> Rp. ${row.harga == row.harga_asli ? 0 : new Intl.NumberFormat().format(row.harga)}`
                         }
                     },
                     {
@@ -267,7 +271,7 @@
                 modal.find('#deskripsi').val(cokData[0].deskripsi)
                 modal.find('#harga').val(cokData[0].harga)
                 modal.find('#jenis_produk').val(cokData[0].jenis_produk)
-                modal.find('#diskon').val(cokData[0].diskon)
+                modal.find('#harga_asli').val(cokData[0].harga_asli)
             }
         })
 

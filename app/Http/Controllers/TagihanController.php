@@ -41,6 +41,8 @@ class TagihanController extends Controller
                 'u.email', 
                 'p.judul_produk', 
                 'p.gambar_1',
+                'p.harga_asli',
+                'p.harga',
                 't.total as tagihan_total'
             )
             ->orderBy('t.created_at', 'DESC')

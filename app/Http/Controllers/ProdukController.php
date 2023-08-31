@@ -45,8 +45,7 @@ class ProdukController extends Controller
             'deskripsi'     => 'required', 
             'jenis_produk'  => 'required', 
             'deskripsi'     => 'required',
-            'harga'         => 'required',   
-            'diskon'        => 'required'  
+            'harga'         => 'required',
         ]);
 
         if($validator->fails()){
@@ -92,8 +91,9 @@ class ProdukController extends Controller
             'gambar_3'      => $nama_gambar_3 ?? "",
             'gambar_4'      => $nama_gambar_4 ?? "",
             'stok'          => '9', 
-            'diskon'        => $request->diskon, 
-            'slug'          => $slug
+            // 'diskon'        => $request->diskon, 
+            'slug'          => $slug,
+            'harga_asli'    => $request->harga_asli
         ]);
 
         return response()->json([
@@ -168,8 +168,9 @@ class ProdukController extends Controller
             'gambar_3'      => $nama_gambar_3 ?? $produk->gambar_3,
             'gambar_4'      => $nama_gambar_4 ?? $produk->gambar_4,
             'stok'          => '9', 
-            'diskon'        => $request->diskon, 
-            'slug'          => $slug
+            // 'diskon'        => $request->diskon, 
+            'slug'          => $slug, 
+            'harga_asli'    => $request->harga_asli
         ]);
 
         return response()->json([

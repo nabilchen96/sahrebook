@@ -233,7 +233,19 @@
                                     Pilihan UKM
                                 </span>
                             @endif
-                            <p><b> Rp. {{ number_format($detail->harga) }}</b></p>
+                            <p>
+                                @if ($detail->harga_asli != $detail->harga)
+                                    <s>Rp. {{ number_format($detail->harga_asli) }}</s> 
+                                    <span class="badge bg-info" style="border-radius: 25px;">
+                                        {{ (($detail->harga_asli - $detail->harga) / $detail->harga_asli) * 100 }}%
+                                    </span> <br>
+                                    <b>Rp. {{ number_format($detail->harga) }}</b>
+                                @else
+                                    <b>Rp. {{ number_format($detail->harga_asli) }}</b> <br>
+                                    <b class="text-white">Rp. {{ number_format($detail->harga) }}</b>
+                                @endif
+                            </p>
+                            
                             <a style="text-decoration: none;" href="{{ url('profil') }}/{{ $detail->id_user }}">
                                 <i class="bi bi-shop"></i>
                                 {{ $detail->name }}

@@ -58,7 +58,9 @@
                                         <td>
                                             {{ $item->judul_produk }} <br>
                                             <span class="my-2 badge bg-success text-white">{{ $item->jenis_produk }}</span><br>
-                                            <i>Harga: Rp {{ number_format($item->harga) }}</i>
+                                            <b><i>Harga: Rp {{ number_format($item->harga_asli) }}</i>
+                                            <br>
+                                            <i>Diskon: Rp {{ $item->harga == $item->harga_asli ? 0 : number_format($item->harga) }}</i></b>
                                         </td>
                                         <td>
                                             <div class="card shadow"
