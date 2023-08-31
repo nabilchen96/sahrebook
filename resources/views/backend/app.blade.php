@@ -193,23 +193,6 @@
     <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.all.min.js"></script>
     <!-- End custom js for this page-->
-
-
-    <!-- Default Statcounter code for sahrebook
-    https://sahrebook.com -->
-    <script type="text/javascript">
-        var sc_project = 12908410;
-        var sc_invisible = 1;
-        var sc_security = "3f88d2a7";
-    </script>
-    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-    <noscript>
-        <div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img
-                    class="statcounter" src="https://c.statcounter.com/12908410/0/3f88d2a7/1/" alt="Web Analytics"
-                    referrerPolicy="no-referrer-when-downgrade"></a></div>
-    </noscript>
-    <!-- End of Statcounter Code -->
-
     @stack('script')
 </body>
 

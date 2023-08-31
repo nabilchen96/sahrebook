@@ -3,7 +3,6 @@
     <style>
         .card-image {
             background-size: cover;
-            /* background-repeat: no-repeat;  */
             background-position: center;
             height: 400px;
         }
