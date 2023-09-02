@@ -36,11 +36,9 @@
                             <thead class="bg-dark text-white">
                                 <tr>
                                     <th width="5%">No</th>
-                                    <th>Gambar</th>
-                                    <th width="300px">Keterangan</th>
-                                    <th>Harga</th>
-                                    <th width="5%"></th>
-                                    <th width="5%"></th>
+                                    <th width="15%">Gambar</th>
+                                    <th>Keterangan</th>
+                                    <th width="15%">Harga</th>
                                     <th width="5%"></th>
                                     <th width="5%"></th>
                                 </tr>
@@ -108,6 +106,13 @@
                             <label>Gambar 4 <span class="text-danger" style="font-size: 12px;">(Max size:
                                     500kb)</span></label>
                             <input name="gambar_4" id="gambar_4" type="file" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Status Produk</label>
+                            <select name="status_produk" class="form-control" id="status_produk">
+                                <option>Aktif</option>
+                                <option>Tidak Aktif</option>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer p-3">
@@ -179,7 +184,10 @@
                     },
                     {
                         render: function(data, type, row, meta) {
-                            return `${row.judul_produk} <br><br> <b>Deskripsi:</b><br>${row.deskripsi.slice(0, 150)} ...`
+                            return `${row.judul_produk} <br><br> 
+                                    <b>Deskripsi:</b><br>${row.deskripsi.slice(0, 150)} ... <br><br>
+                                    <b>Dibuat</b><br>
+                                    ${row.created_at}`
                         }
                     },
                     {
@@ -191,8 +199,14 @@
                                 <b>Harga Asli</b>
                                 <br> Rp. ${new Intl.NumberFormat().format(row.harga_asli)}<br><br> 
 
-                                <b>Diskon</b>
-                                <br> Rp. ${row.harga == row.harga_asli ? 0 : new Intl.NumberFormat().format(row.harga)}`
+                                <b>Harga Diskon</b>
+                                <br> Rp. ${row.harga == row.harga_asli ? 0 : new Intl.NumberFormat().format(row.harga)}
+                                
+                                <br><br>
+                                ${row.status_produk == 'Aktif' 
+                                ? '<span class="badge bg-info text-white">Aktif</span>' 
+                                : '<span class="badge bg-danger text-white">Tidak Aktif</span>'}`
+
                         }
                     },
                     {
@@ -204,21 +218,16 @@
                                     
                                     return `<a href="javascript:void(0)" onclick="pilihanUKMData(${row.id},${row.pilihan_ukm})">
                                             <i style="font-size: 1.5rem;" class="text-danger bi bi-fire"></i>
+                                        </a><br><br>
+                                                <a href="/back/detail-product/${row.id}" class="text-primary">
+                                            <i class="bi bi-folder2-open" style="font-size: 1.5rem;"></i>
                                         </a>`
                                 } else {
                                     return `<a href="javascript:void(0)" onclick="pilihanUKMData(${row.id},${row.pilihan_ukm})">
                                             <i style="font-size: 1.5rem;" class="text-secondary bi bi-fire"></i>
-                                        </a>`
-                                }
-                            @else 
-                                if (row.pilihan_ukm == "1") {
-                                    
-                                    return `<a>
-                                            <i style="font-size: 1.5rem;" class="text-danger bi bi-fire"></i>
-                                        </a>`
-                                } else {
-                                    return `<a>
-                                            <i style="font-size: 1.5rem;" class="text-secondary bi bi-fire"></i>
+                                                </a><br><br>
+                                                <a href="/back/detail-product/${row.id}" class="text-primary">
+                                            <i class="bi bi-folder2-open" style="font-size: 1.5rem;"></i>
                                         </a>`
                                 }
                             @endif
@@ -226,22 +235,11 @@
                     },
                     {
                         render: function(data, type, row, meta) {
-                            return `<a href="/back/detail-product/${row.id}" class="text-primary">
-                                    <i class="bi bi-eye" style="font-size: 1.5rem;"></i>
-                                </a>`
-                        }
-                    },
-                    {
-                        render: function(data, type, row, meta) {
                             return `<a data-toggle="modal" data-target="#modal"
                                     data-bs-id=` + (row.id) + ` href="javascript:void(0)">
                                     <i style="font-size: 1.5rem;" class="text-success bi bi-grid"></i>
-                                </a>`
-                        }
-                    },
-                    {
-                        render: function(data, type, row, meta) {
-                            return `<a href="javascript:void(0)" onclick="hapusData(` + (row
+                                </a><br><br>
+                                <a href="javascript:void(0)" onclick="hapusData(` + (row
                                 .id) + `)">
                                     <i style="font-size: 1.5rem;" class="text-danger bi bi-trash"></i>
                                 </a>`
@@ -272,6 +270,7 @@
                 modal.find('#harga').val(cokData[0].harga)
                 modal.find('#jenis_produk').val(cokData[0].jenis_produk)
                 modal.find('#harga_asli').val(cokData[0].harga_asli)
+                modal.find('#status_produk').val(cokData[0].status_produk)
             }
         })
 

@@ -80,7 +80,7 @@ class ProdukController extends Controller
         $slug = preg_replace('/[^a-z0-9-]+/', '-', $slug); // Menghapus karakter selain huruf kecil, angka, dan tanda minus
 
         //proses insert
-        $insert = Produk::insert([
+        $insert = Produk::create([
             'judul_produk'  => $request->judul_produk, 
             'deskripsi'     => $request->deskripsi, 
             'id_user'       => Auth::user()->id ?? 2,
@@ -92,6 +92,7 @@ class ProdukController extends Controller
             'gambar_4'      => $nama_gambar_4 ?? "",
             'stok'          => '9', 
             // 'diskon'        => $request->diskon, 
+            'status_produk' => $request->status_produk,
             'slug'          => $slug,
             'harga_asli'    => $request->harga_asli
         ]);
@@ -168,7 +169,7 @@ class ProdukController extends Controller
             'gambar_3'      => $nama_gambar_3 ?? $produk->gambar_3,
             'gambar_4'      => $nama_gambar_4 ?? $produk->gambar_4,
             'stok'          => '9', 
-            // 'diskon'        => $request->diskon, 
+            'status_produk' => $request->status_produk, 
             'slug'          => $slug, 
             'harga_asli'    => $request->harga_asli
         ]);
@@ -251,7 +252,7 @@ class ProdukController extends Controller
                     ->select(
                         'users.name', 
                         'produks.*'
-                    );
+                    )->where('produks.status_produk', 'Aktif');
 
         if($cari == 'all'){
             $produk = $produk->paginate(8);

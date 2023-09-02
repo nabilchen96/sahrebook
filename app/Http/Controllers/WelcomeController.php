@@ -18,6 +18,7 @@ class WelcomeController extends Controller
                 'users.name',
                 'produks.*'
             )
+            ->where('produks.status_produk', 'Aktif')
             ->inRandomOrder()->limit(8)->get();
 
         $berita = Berita::join('users', 'users.id', '=', 'beritas.id_user')

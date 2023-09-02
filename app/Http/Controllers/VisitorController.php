@@ -53,7 +53,8 @@ class VisitorController extends Controller
                     '127.0.0.1:8000',
                     'sahrebook.com',
                     'ebook.airportslab.com',
-                    'www.sahrebook.com'
+                    'www.sahrebook.com', 
+                    'www.sahrebook.com.airportslab.com'
                 ]
             )
             ->orderBy('total', 'DESC')
