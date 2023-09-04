@@ -98,6 +98,7 @@ function deleteCart(id) {
             if (res.data.responCode == 1) {
                 getData()
                 getCartNotif()
+                document.getElementById('diskon').innerHTML = 0
             }
         })
     })
