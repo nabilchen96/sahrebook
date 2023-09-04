@@ -154,7 +154,7 @@ class TagihanController extends Controller
                 'diskon'        => intval(Request('diskon')), 
                 'total'         => $totalHarga,
                 'status'        => $totalHarga != 0 ? 'UNPAID' : 'PAID',
-                'snap_token'    => 0
+                'snap_token'    => @$snapToken ?? 0
             ]);
     
             // make detail tagihan
@@ -163,7 +163,7 @@ class TagihanController extends Controller
                     'id_tagihan'    => $tagihan->id,
                     'id_produk'     => $value->id_produk,
                     'harga'         => $value->harga, 
-                    'diskon'        => @$snapToken ?? 0
+                    'diskon'        => 0
                 ]);
             }
     
