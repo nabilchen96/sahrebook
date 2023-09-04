@@ -53,7 +53,7 @@ function getData() {
             },
             {
                 render: function (data, type, row, meta) {
-                    return 'Rp ' + row.total.toString().replace(/\D/g, "").replace(
+                    return 'Rp ' + (row.total - row.diskon).toString().replace(/\D/g, "").replace(
                         /\B(?=(\d{3})+(?!\d))/g, ",")
                 }
             },
@@ -124,7 +124,7 @@ $('#modal-detail').on('show.bs.modal', function (event) {
         let dataTable = ''
         let total = 0
         let grandtotal = 0
-        let diskon = 0
+        // let diskon = 0
 
         data.forEach(e => {
             dataTable += `
@@ -178,13 +178,13 @@ $('#modal-detail').on('show.bs.modal', function (event) {
                         <td>
                             <h6>Diskon</h6>
                         </td>
-                        <td class="text-end">Rp ${diskon.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                        <td class="text-end">Rp ${data[0].diskon.toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                     </tr>
                     <tr>
                         <td>
                             <h6>Grand Total</h6>
                         </td>
-                        <td class="text-end">Rp ${(total + diskon).toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                        <td class="text-end">Rp ${(total - data[0].diskon).toString().replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
                     </tr>
                 </tbody>
             </table>

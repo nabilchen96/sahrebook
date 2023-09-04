@@ -69,6 +69,7 @@ class TagihanController extends Controller
                     'u.no_hp', 
                     'u.email', 
                     'p.judul_produk', 
+                    't.diskon'
                 )
                 ->get();
 
@@ -91,6 +92,7 @@ class TagihanController extends Controller
                     'u.no_hp', 
                     'u.email', 
                     'p.judul_produk', 
+                    't.diskon'
                 )
                 ->get();
 
@@ -106,6 +108,8 @@ class TagihanController extends Controller
                 ->join('produks as p', 'p.id', '=', 'c.id_produk')
                 ->where('c.id_user', Auth::id())
                 ->get();
+
+        // dd(Request('diskon'));
 
         $totalHarga = collect($cart)->sum('harga');
 
@@ -128,7 +132,7 @@ class TagihanController extends Controller
                 $params = array(
                     'transaction_details' => array(
                         'order_id' => $invoice,
-                        'gross_amount' => $totalHarga,
+                        'gross_amount' => $totalHarga - Request('diskon'),
                     ),
                     'customer_details' => array(
                         'first_name' => Auth::user()->name,
@@ -147,10 +151,10 @@ class TagihanController extends Controller
                 'id_user'       => Auth::id(), 
                 'invoice'       => $invoice,
                 'tgl_tagihan'   => date('Y-m-d'), 
-                'diskon'        => 0, 
+                'diskon'        => intval(Request('diskon')), 
                 'total'         => $totalHarga,
                 'status'        => $totalHarga != 0 ? 'UNPAID' : 'PAID',
-                'snap_token'    => @$snapToken ?? 0
+                'snap_token'    => 0
             ]);
     
             // make detail tagihan
@@ -159,7 +163,7 @@ class TagihanController extends Controller
                     'id_tagihan'    => $tagihan->id,
                     'id_produk'     => $value->id_produk,
                     'harga'         => $value->harga, 
-                    'diskon'        => 0
+                    'diskon'        => @$snapToken ?? 0
                 ]);
             }
     

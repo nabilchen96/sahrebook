@@ -112,10 +112,12 @@ function formatNumber(n) {
 function storeTagihan() {
 
     document.getElementById("tombol_kirim").disabled = true;
+    var diskon = document.getElementById("diskon").textContent
+    var diskon_parse = parseInt(diskon.replace(/[^\d]/g, ''));
 
     axios({
             method: 'post',
-            url: '/store-tagihan',
+            url: `/store-tagihan?diskon=${diskon_parse}`,
         })
         .then(function (res) {
             //handle success         
@@ -142,4 +144,44 @@ function storeTagihan() {
             //handle error
             console.log(res);
         });
+}
+
+function cekDiskon(){
+
+    //mengambil angka grand_total
+    var total = document.getElementById("total").textContent
+    var total_parse = parseInt(total.replace(/[^\d]/g, ''));
+
+    //mengambil kupon diskon
+    var kode_kupon = document.getElementById('kode_kupon').value
+
+    //cek kupon tersedia
+    axios.get(`/back/cek-kode-kupon?total_parse=${total_parse}&kode_kupon=${kode_kupon}`).then(function (res){
+
+        let data = res.data.data 
+
+        //sweet alert
+        if(data.code == 1){
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Sukses',
+                text: data.message,
+                timer: 3000,
+                showConfirmButton: false
+            })
+
+            document.getElementById('diskon').innerHTML = 'Rp ' + formatNumber(data.total_diskon.toString())
+            document.getElementById('grand_total').innerHTML = 'Rp ' + formatNumber((total_parse - data.total_diskon).toString())
+        }else{
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'Ops!',
+                text: data.message,
+                timer: 3000,
+                showConfirmButton: false
+            })
+        }
+    })
 }

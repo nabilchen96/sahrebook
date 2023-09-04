@@ -64,7 +64,7 @@
                         <h6>Diskon</h6>
                     </td>
                     <td class="text-end">
-                        Rp {{ number_format(0) }}
+                        Rp {{ number_format($item->diskon) }}
                     </td>
                 </tr>
                 <tr>
@@ -72,7 +72,7 @@
                         <h6>Grand Total</h6>
                     </td>
                     <td class="text-end">
-                        Rp {{ number_format($total) }}
+                        Rp {{ number_format($total - $item->diskon) }}
                     </td>
                 </tr>
             </tbody>

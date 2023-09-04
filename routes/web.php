@@ -49,6 +49,9 @@ Route::get('/profil/{id}', 'App\Http\Controllers\UserProfilController@show');
 Route::get('/auth/redirect', 'App\Http\Controllers\AuthController@redirectToProvider');
 Route::get('/auth/callback', 'App\Http\Controllers\AuthController@handleProviderCallback');
 
+//CEK KODE KUPON
+Route::get('/back/cek-kode-kupon', 'App\Http\Controllers\KuponDiskonController@cekKodeKupon');
+
 //BACKEND
 Route::group(['middleware' => 'auth'], function () {
 
@@ -79,6 +82,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/back/delete-product', 'App\Http\Controllers\ProdukController@delete');
         Route::post('/back/pilihan-UKM-product', 'App\Http\Controllers\ProdukController@pilihanUKM');
 
+        //Kupon Diskon
+        Route::get('/back/kupon-diskon', 'App\Http\Controllers\KuponDiskonController@index');
+        Route::get('/back/data-kupon-diskon', 'App\Http\Controllers\KuponDiskonController@data');
+        Route::post('/back/store-kupon-diskon', 'App\Http\Controllers\KuponDiskonController@store');
+        Route::post('/back/update-kupon-diskon', 'App\Http\Controllers\KuponDiskonController@update');
+        Route::post('/back/delete-kupon-diskon', 'App\Http\Controllers\KuponDiskonController@delete');
+        
         //DETAIL PRODUCT
         Route::get('/back/detail-product/{id}', 'App\Http\Controllers\DetailProdukController@index');
         Route::get('/back/data-detail-product/{id}', 'App\Http\Controllers\DetailProdukController@data');

@@ -15,6 +15,15 @@
                             </div>
                             <table id="" class="table table-striped">
                                 <tr>
+                                    <td colspan="2">
+                                        <i>MASUKAN KODE KUPON</i>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Kode Kupon" id="kode_kupon" name="kode_kupon">
+                                            <button onclick="cekDiskon()" class="input-group-text bg-primary text-white" id="basic-addon2"><i class="bi bi-search"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>JUMLAH</td>
                                     <td class="text-end" id="total"></td>
                                 </tr>
@@ -49,7 +58,7 @@
                             readonly>
                         <br>
                         <div id="tombol_pembayaran">
-
+                            
                         </div>
                     </div>
                 </div>

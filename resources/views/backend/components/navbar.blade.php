@@ -28,6 +28,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ url('back/kupon-diskon') }}">
+                <i class="bi bi-ticket-perforated menu-icon"></i>
+                <span class="menu-title">Kupon Diskon</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" @stack('menu') href="{{ url('back/beritas') }}">
                 <i class="bi bi-newspaper menu-icon"></i>
                 <span class="menu-title">Berita</span>
