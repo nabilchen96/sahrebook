@@ -113,6 +113,8 @@ class TagihanController extends Controller
 
         $totalHarga = collect($cart)->sum('harga');
 
+        // dd($totalHarga - Request('diskon'));
+
         DB::beginTransaction();
 
         try{
@@ -132,7 +134,7 @@ class TagihanController extends Controller
                 $params = array(
                     'transaction_details' => array(
                         'order_id' => $invoice,
-                        'gross_amount' => $totalHarga - intval(Request('diskon')),
+                        'gross_amount' => $totalHarga - Request('diskon'),
                     ),
                     'customer_details' => array(
                         'first_name' => Auth::user()->name,
