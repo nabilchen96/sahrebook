@@ -19,7 +19,9 @@
                                         <i>MASUKAN KODE KUPON</i>
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control" placeholder="Kode Kupon" id="kode_kupon" name="kode_kupon">
-                                            <button onclick="cekDiskon()" class="input-group-text bg-primary text-white" id="basic-addon2"><i class="bi bi-search"></i></button>
+                                            <button onclick="cekDiskon()" class="input-group-text bg-primary text-white" id="basic-addon2">
+                                                <i class="bi bi-search"></i>&nbsp; Cari
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
