@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    getData()
+    getData(), 
+    cekDiskon()
 })
 
 function getData() {
