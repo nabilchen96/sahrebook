@@ -68,7 +68,7 @@ function getData() {
                 render: function (data, type, row, meta) {
                     if (row.status == 'UNPAID') {
 
-                        return `<button id="pay-button" onclick=pay() data-transaction-token="${row.snap_token}" class="btn btn-sm btn-danger" style="border-radius: 25px;">
+                        return `<button id="pay-button" onclick=pay(this) data-transaction-token="${row.snap_token}" class="btn btn-sm btn-danger" style="border-radius: 25px;">
                                 Bayar
                             </button>`
                     } else {
@@ -86,10 +86,12 @@ function formatNumber(n) {
     return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
-function pay() {
+function pay(button) {
 
-    const payButton = document.getElementById('pay-button');
-    const transactionToken = payButton.dataset.transactionToken;
+    // const payButton = document.getElementById('pay-button');
+    const transactionToken = button.dataset.transactionToken;
+
+    console.log(transactionToken);
 
     window.snap.pay(transactionToken, {
         onSuccess: function (result) {
