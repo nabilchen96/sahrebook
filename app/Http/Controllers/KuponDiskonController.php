@@ -109,7 +109,7 @@ class KuponDiskonController extends Controller
 
         if($kupon){
 
-            if(Request('total_parse') == $kupon->minimal_belanja){
+            if(Request('total_parse') >= $kupon->minimal_belanja){
     
                 $data = [
                     'message'   => 'Hore!, Anda Mendapatkan Potongan Diskon Sebesar Rp '.number_format($kupon->total_diskon), 
