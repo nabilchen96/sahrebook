@@ -112,7 +112,6 @@ function pay() {
             alert('you closed the popup without finishing the payment');
         }
     })
-
 }
 
 $('#modal-detail').on('show.bs.modal', function (event) {

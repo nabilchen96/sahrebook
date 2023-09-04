@@ -132,7 +132,7 @@ class TagihanController extends Controller
                 $params = array(
                     'transaction_details' => array(
                         'order_id' => $invoice,
-                        'gross_amount' => $totalHarga - Request('diskon'),
+                        'gross_amount' => $totalHarga - intval(Request('diskon')),
                     ),
                     'customer_details' => array(
                         'first_name' => Auth::user()->name,
