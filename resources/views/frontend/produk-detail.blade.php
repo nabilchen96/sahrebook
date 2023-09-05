@@ -225,6 +225,9 @@
                     <div class="card-body p-0 ">
                         <div>
                             <h4>{{ $detail->judul_produk }}</h4>
+                            <span class="badge bg-primary mb-2">
+                                <i class="bi bi-box-seam"></i> {{ $detail->jenis }}
+                            </span>
                             <span class="badge bg-primary mb-2">{{ $detail->jenis_produk }}</span>
                             @if ($detail->pilihan_ukm == '1')
                                 <span class="badge bg-danger mb-2">

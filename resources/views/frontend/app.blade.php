@@ -103,7 +103,7 @@
                                 style="margin-right: 20px">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('produk') }}" style="margin-right: 20px">Buku</a>
+                            <a class="nav-link" href="{{ url('produk') }}" style="margin-right: 20px">Produk</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('berita') }}" style="margin-right: 20px">Artikel</a>
