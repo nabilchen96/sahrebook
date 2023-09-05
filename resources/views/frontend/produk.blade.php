@@ -15,8 +15,8 @@
         <div class="container px-3 py-4">
             <div class="tentang text-white">
                 <div style="margin-top: auto; margin-bottom: auto">
-                    <h2>Daftar Ebook</h2>
-                    Temukan Ebook Pemrograman Lainnya
+                    <h2>Daftar Produk</h2>
+                    Temukan Produk Digital Lainnya
                 </div>
                 <!-- <img src="shop-illustration.svg" width="300px" alt="" /> -->
             </div>

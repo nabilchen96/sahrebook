@@ -106,9 +106,9 @@
     <div class="container mt-5">
         <div class="row">
             {{-- daftar produk --}}
-            <h4 class="px-3">Daftar Ebook</h4>
+            <h4 class="px-3">Daftar Produk</h4>
             <a class="px-3" style="text-decoration: none;" href="{{ url('produk') }}">
-                Lihat Ebook Lainnya
+                Lihat Produk Lainnya
                 <i class="bi bi-bag"></i>
             </a>
             @include('frontend.components.list-produk', ['data' => @$produk])

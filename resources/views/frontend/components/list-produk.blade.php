@@ -4,22 +4,29 @@
             <div class="col-lg-3 col-md-6 px-3 mt-3">
                 <a href="{{ url('produk-detail') }}/{{ $item->slug }}" style="text-decoration: none;"
                     class="card shadow mb-4">
-                    @if ($item->pilihan_ukm == '1')
+                    {{-- @if ($item->pilihan_ukm == '1')
                         <span class="badge bg-danger"
                             style="width: fit-content;
                                     position: absolute;
                                     margin: 10px;">
                             <i class="bi bi-fire"></i>
-                            Pilihan UKM
+                            Best Seller
                         </span>
-                    @endif
+                    @endif --}}
+                    <span class="badge bg-primary"
+                        style="width: fit-content;
+                                    position: absolute;
+                                    margin: 10px;">
+                        <i class="bi bi-box-seam"></i>
+                        {{ $item->jenis }}
+                    </span>
                     <img class="img-fluid foto_produk" src="{{ asset('gambar_produk') }}/{{ $item->gambar_1 }}" />
                     <div class="card-body">
                         <div class="card-text" style="font-size: 14px">
                             <span class="judul_produk">{{ $item->judul_produk }}</span>
                             <p class="mt-2">
                                 @if ($item->harga_asli != $item->harga)
-                                    <s>Rp. {{ number_format($item->harga_asli) }}</s> 
+                                    <s>Rp. {{ number_format($item->harga_asli) }}</s>
                                     <span class="badge bg-info" style="border-radius: 25px;">
                                         {{ (($item->harga_asli - $item->harga) / $item->harga_asli) * 100 }}%
                                     </span> <br>

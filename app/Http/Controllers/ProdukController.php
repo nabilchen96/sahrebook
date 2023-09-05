@@ -94,7 +94,8 @@ class ProdukController extends Controller
             // 'diskon'        => $request->diskon, 
             'status_produk' => $request->status_produk,
             'slug'          => $slug,
-            'harga_asli'    => $request->harga_asli
+            'harga_asli'    => $request->harga_asli, 
+            'jenis'         => $request->jenis,
         ]);
 
         return response()->json([
@@ -171,7 +172,8 @@ class ProdukController extends Controller
             'stok'          => '9', 
             'status_produk' => $request->status_produk, 
             'slug'          => $slug, 
-            'harga_asli'    => $request->harga_asli
+            'harga_asli'    => $request->harga_asli, 
+            'jenis'         => $request->jenis
         ]);
 
         return response()->json([

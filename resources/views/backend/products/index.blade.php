@@ -71,7 +71,15 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Jenis Produk</label>
-                            <select name="jenis_produk" class="form-control" id="jenis_produk">
+                            <select name="jenis" class="form-control" id="jenis" required>
+                                <option>Ebook</option>
+                                <option>Video</option>
+                                <option>Source Code</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Sub Jenis Produk</label>
+                            <select name="jenis_produk" class="form-control" id="jenis_produk" required>
                                 <option>Flutter</option>
                                 <option>Laravel</option>
                                 <option>Vue Js</option>
@@ -184,28 +192,32 @@
                     },
                     {
                         render: function(data, type, row, meta) {
-                            return `${row.judul_produk} <br><br> 
+                            return `${row.judul_produk.slice(0, 55)} ... <br><br> 
                                     <b>Deskripsi:</b><br>${row.deskripsi.slice(0, 150)} ... <br><br>
                                     <b>Dibuat</b><br>
-                                    ${row.created_at}`
+                                    ${row.created_at} <br><br>
+                                    
+                                    <span class="badge bg-info text-white"><i class="bi bi-box-seam"></i> ${row.jenis}</span>
+                                    `
                         }
                     },
                     {
                         render: function(data, type, row, meta) {
                             return `
-                                <b>Jenis Produk</b>
-                                <br> ${row.jenis_produk} <br><br>
+                                <b>Sub Jenis</b>
+                                <br> ${row.jenis_produk} <br><hr>
 
                                 <b>Harga Asli</b>
                                 <br> Rp. ${new Intl.NumberFormat().format(row.harga_asli)}<br><br> 
 
                                 <b>Harga Diskon</b>
                                 <br> Rp. ${row.harga == row.harga_asli ? 0 : new Intl.NumberFormat().format(row.harga)}
-                                
+
                                 <br><br>
                                 ${row.status_produk == 'Aktif' 
-                                ? '<span class="badge bg-info text-white">Aktif</span>' 
-                                : '<span class="badge bg-danger text-white">Tidak Aktif</span>'}`
+                                ? '<span class="badge bg-info text-white"><i class="bi bi-check-circle"></i> Aktif</span>' 
+                                : '<span class="badge bg-danger text-white"><i class="bi bi-x-circle"></i> Tidak Aktif</span>'}
+                                `
 
                         }
                     },
@@ -269,6 +281,7 @@
                 modal.find('#deskripsi').val(cokData[0].deskripsi)
                 modal.find('#harga').val(cokData[0].harga)
                 modal.find('#jenis_produk').val(cokData[0].jenis_produk)
+                modal.find('#jenis').val(cokData[0].jenis)
                 modal.find('#harga_asli').val(cokData[0].harga_asli)
                 modal.find('#status_produk').val(cokData[0].status_produk)
             }
