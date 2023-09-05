@@ -55,6 +55,11 @@
             display: block;
             font-weight: bold
         }
+
+        .w-100 > ol > li {
+            margin-bottom: 10px;
+            padding-right: 2rem;
+        }
     </style>
 </head>
 
