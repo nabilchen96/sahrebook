@@ -12,6 +12,13 @@
                             Pilihan UKM
                         </span>
                     @endif
+                    <span class="badge bg-primary"
+                        style="width: fit-content;
+                                position: absolute;
+                                margin: 10px;">
+                        <i class="bi bi-box-seam"></i>
+                        {{ $item->jenis }}
+                    </span>
                     <img class="foto_produk" src="{{ asset('gambar_produk') }}/{{ $item->gambar_1 }}" />
                     <div class="card-body">
                         <div class="card-text" style="font-size: 14px">

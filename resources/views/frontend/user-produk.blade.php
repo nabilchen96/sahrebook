@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group-item py-0" style="border: none;">
-                                <a class="text-danger" href="{{ url('user-produk') }}?q=Ebook" style="text-decoration: none;">
+                                <a class="text-danger" href="{{ url('user-produk') }}?q=Produk" style="text-decoration: none;">
                                     <h5><i class="bi bi-box-seam me-1"></i> Produk</h5>
                                 </a>
                             </li>
@@ -47,7 +47,7 @@
             <div class="col-lg-9 mb-4">
                 <div class="card">
                     <div class="card-body py-2">
-                        <h3><i class="bi bi-book"></i> {{ Request('q') }}</h3>
+                        <h3><i class="bi bi-box-seam"></i> {{ Request('q') }}</h3>
                     </div>
                 </div>
                 <div>
