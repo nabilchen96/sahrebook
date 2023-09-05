@@ -2,13 +2,13 @@
 @section('content')
     <div class="container mt-5 mb-5 px-4">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 mb-4">
                 <div class="card">
                     <div class="card-body">
                         <ul class="list-group">
                             <li class="list-group-item py-0" style="border: none;">
                                 <a href="{{ url('user-produk') }}?q=Ebook" style="text-decoration: none;">
-                                    <h5><i class="bi bi-book me-1"></i> Ebook</h5>
+                                    <h5><i class="bi bi-box-seam me-1"></i> Produk</h5>
                                 </a>
                             </li>
                             <hr>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-9 mb-4">
                 <div class="card mb-2">
                     <div class="card-body py-2">
                         <h3><i class="bi bi-person"></i> Profil</h3>

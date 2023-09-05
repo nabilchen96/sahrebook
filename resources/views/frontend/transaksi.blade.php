@@ -8,7 +8,7 @@
                         <ul class="list-group">
                             <li class="list-group-item py-0" style="border: none;">
                                 <a href="{{ url('user-produk') }}?q=Ebook" style="text-decoration: none;">
-                                    <h5><i class="bi bi-book me-1"></i> Ebook</h5>
+                                    <h5><i class="bi bi-box-seam me-1"></i> Produk</h5>
                                 </a>
                             </li>
                             <hr>
