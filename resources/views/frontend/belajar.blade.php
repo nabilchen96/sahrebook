@@ -60,6 +60,10 @@
             margin-bottom: 10px;
             padding-right: 2rem;
         }
+
+        .img-fluid{
+            margin-bottom: 50px !important;
+        }
     </style>
 </head>
 
