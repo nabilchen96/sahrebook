@@ -57,6 +57,12 @@
                                 value="{{ $data->judul_detail_produk }}">
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Kategori <sup class="text-danger">*</sup></label>
+                            <input type="text" placeholder="Kategori" class="form-control"
+                                id="kategori" name="kategori" required
+                                value="{{ $data->kategori }}">
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">Isi Pembahasan <sup class="text-danger">*</sup></label>
                             <div id="editor" style="height: 500px;">
                                 <?php
@@ -123,6 +129,7 @@
                     url: '/back/update-detail-product/{{ $id }}',
                     data: {
                         'judul_detail_produk': document.getElementById('judul_detail_produk').value,
+                        'kategori': document.getElementById('kategori').value,
                         'isi_detail_produk': quill.root.innerHTML,
                         'id': document.getElementById('id').value
                     },

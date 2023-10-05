@@ -40,6 +40,8 @@ class ProdukController extends Controller
             'gambar_2'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 1024',
             'gambar_3'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 1024',
             'gambar_4'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 1024',
+            'gambar_5'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 1024',
+            'gambar_6'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 1024',
 
             'judul_produk'  => 'required',
             'deskripsi'     => 'required', 
@@ -75,6 +77,18 @@ class ProdukController extends Controller
             $gambar_4->move('gambar_produk', $nama_gambar_4);
         }
 
+        if($request->gambar_5){
+            $gambar_5       = $request->gambar_5;
+            $nama_gambar_5  = '5'.date('YmdHis.').$gambar_5->extension();
+            $gambar_5->move('gambar_produk', $nama_gambar_5);
+        }
+
+        if($request->gambar_6){
+            $gambar_6       = $request->gambar_6;
+            $nama_gambar_6  = '6'.date('YmdHis.').$gambar_6->extension();
+            $gambar_6->move('gambar_produk', $nama_gambar_6);
+        }
+
         //make slug
         $slug = strtolower($request->judul_produk); // Mengubah huruf kapital menjadi huruf kecil
         $slug = preg_replace('/[^a-z0-9-]+/', '-', $slug); // Menghapus karakter selain huruf kecil, angka, dan tanda minus
@@ -90,6 +104,8 @@ class ProdukController extends Controller
             'gambar_2'      => $nama_gambar_2 ?? "",
             'gambar_3'      => $nama_gambar_3 ?? "",
             'gambar_4'      => $nama_gambar_4 ?? "",
+            'gambar_5'      => $nama_gambar_5 ?? "",
+            'gambar_6'      => $nama_gambar_6 ?? "",
             'stok'          => '9', 
             // 'diskon'        => $request->diskon, 
             'status_produk' => $request->status_produk,
@@ -115,6 +131,8 @@ class ProdukController extends Controller
             'gambar_2'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 500',
             'gambar_3'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 500',
             'gambar_4'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 500',
+            'gambar_5'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 500',
+            'gambar_6'      => 'nullable|mimes:png,jpg,JPEG,PNG|max: 500',
 
             'judul_produk'  => 'required',
             'deskripsi'     => 'required', 
@@ -152,6 +170,18 @@ class ProdukController extends Controller
             $gambar_4->move('gambar_produk', $nama_gambar_4);
         }
 
+        if($request->gambar_5){
+            $gambar_5       = $request->gambar_5;
+            $nama_gambar_5  = '5'.date('YmdHis.').$gambar_5->extension();
+            $gambar_5->move('gambar_produk', $nama_gambar_5);
+        }
+
+        if($request->gambar_6){
+            $gambar_6       = $request->gambar_6;
+            $nama_gambar_6  = '6'.date('YmdHis.').$gambar_6->extension();
+            $gambar_6->move('gambar_produk', $nama_gambar_6);
+        }
+
         //make slug
         $slug = strtolower($request->judul_produk); // Mengubah huruf kapital menjadi huruf kecil
         $slug = preg_replace('/[^a-z0-9-]+/', '-', $slug); // Menghapus karakter selain huruf kecil, angka, dan tanda minus
@@ -169,6 +199,9 @@ class ProdukController extends Controller
             'gambar_2'      => $nama_gambar_2 ?? $produk->gambar_2,
             'gambar_3'      => $nama_gambar_3 ?? $produk->gambar_3,
             'gambar_4'      => $nama_gambar_4 ?? $produk->gambar_4,
+            'gambar_5'      => $nama_gambar_5 ?? $produk->gambar_5,
+            'gambar_6'      => $nama_gambar_6 ?? $produk->gambar_6,
+
             'stok'          => '9', 
             'status_produk' => $request->status_produk, 
             'slug'          => $slug, 

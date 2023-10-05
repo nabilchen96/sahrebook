@@ -85,6 +85,7 @@ class DetailProdukController extends Controller
             'id_produk' => $id,
             'judul_detail_produk' => $request->input('judul_detail_produk'),
             'isi_detail_produk' => $dom->saveHTML(), // Simpan isi pembahasan yang sudah diproses dengan gambar
+            'kategori'  => $request->kategori
         ]);
 
         $data = [
@@ -181,6 +182,7 @@ class DetailProdukController extends Controller
         $detail_produk->update([
             'judul_detail_produk' => $request->input('judul_detail_produk'),
             'isi_detail_produk' => $dom->saveHTML(), // Simpan isi pembahasan yang sudah diproses dengan gambar
+            'kategori'  => $request->kategori
         ]);
 
         $data = [

@@ -56,13 +56,41 @@
             font-weight: bold
         }
 
-        .w-100 > ol > li {
+        .w-100>ol>li {
             margin-bottom: 10px;
             padding-right: 2rem;
         }
 
-        .img-fluid{
+        .img-fluid {
             margin-bottom: 50px !important;
+        }
+
+        .navbar-vertical .navbar-nav .nav .nav-item .nav-link:before {
+            background-color: white !important;
+            border-radius: 10px !important;
+            content: "" !important;
+            height: 4px !important;
+            left: 37px !important;
+            position: absolute !important;
+            top: 15px !important;
+            transition: all .4s ease-in-out !important;
+            width: 4px !important;
+        }
+
+        .front-icon {
+            /* left: 37px !important; */
+            top: 8px !important;
+            /* height: 55px; */
+            position: absolute;
+            /* margin-top: -31px; */
+        }
+
+        .navbar-vertical .navbar-nav .nav-item .nav-link[data-bs-toggle=collapse]:after {
+            top: 10px;
+        }
+
+        .navbar-vertical .navbar-nav .nav-item .nav-link.not-collapse[data-bs-toggle=collapse]:after {
+            display: none;
         }
     </style>
 </head>
@@ -81,15 +109,63 @@
                 </a>
                 <!-- Navbar nav -->
                 <ul class="navbar-nav flex-column" id="sideNavbar">
-                    @foreach ($data as $k => $item)
-                        <li id="{{ $item->id }}" class="mx-4">
-                            <a href="{{ url('belajar') }}/{{ $id }}?p={{ $item->id }}#{{ $item->id }}"
-                                class="{{ Request('p') == $item->id ? 'text-warning' : 'text-white' }}">
-                                <i class="bi bi-file-earmark-text"></i> <b>Part {{ $k + 1 }}</b>:
-                                {{ $item->judul_detail_produk }}
-                            </a>
-                            <hr style="color: white;" />
-                        </li>
+                    @foreach ($data->groupBy('kategori') as $kategori => $item)
+                        @if (empty($kategori))
+                            {{-- <li class="nav-item">
+                                <a class="nav-link text-white not-collapse" href="#!" data-bs-toggle="collapse">
+                                    <i class="front-icon bi bi-file-earmark-text"></i> &nbsp;
+                                    <span
+                                        style="white-space: normal; margin-left: 19px !important; margin-right: 15px;">
+                                        {{ $item->judul_detail_produk }}
+                                    </span>
+                                </a>
+                                <hr class="mx-4 my-1" style="color: white;" />
+                            </li> --}}
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link text-white has-arrow" href="#!"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#nav{{ preg_replace('/[^A-Za-z0-9]/', '', $kategori) }}"
+                                    aria-expanded="false" aria-controls="navEmail">
+                                    <i class="front-icon bi bi-file-earmark-text"></i>
+                                    <span
+                                        style="white-space: normal; margin-left: 19px !important; margin-right: 15px;">
+                                        &nbsp; {{ $kategori }}
+                                    </span>
+                                </a>
+
+                                <div id="nav{{ preg_replace('/[^A-Za-z0-9]/', '', $kategori) }}" class="collapse
+                                    {{ Request('k') == preg_replace('/[^A-Za-z0-9]/', '', $kategori) ? 'show' : '' }}"
+                                    data-bs-parent="#sideNavbar">
+                                    <ul style="font-size: 14px;" class="custom-list nav flex-column">
+                                        @foreach ($item as $item)
+                                            <li class="nav-item">
+                                                <a class="nav-link has-arrow sub-nav {{ Request('p') == $item->id ? 'text-warning' : 'text-white' }}"
+                                                    style="margin-left: 8px; white-space: normal; position: relative;"
+                                                    href="{{ url('belajar') }}/{{ $id }}?k={{ preg_replace('/[^A-Za-z0-9]/', '', $kategori) }}&p={{ $item->id }}#{{ $item->id }}">
+                                                    {{ $item->judul_detail_produk }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </li>
+                            <hr class="mx-4 my-1" style="color: white;">
+                        @endif
+                    @endforeach
+                    @foreach ($data->where('kategori', null) as $kategori => $item)
+                        <a href="{{ url('belajar') }}/{{ $id }}?p={{ $item->id }}#{{ $item->id }}">
+                            <li class="nav-item" id="{{ $item->id }}">
+                                <span class="nav-link {{ Request('p') == $item->id ? 'text-warning' : 'text-white' }} not-collapse"
+                                    data-bs-toggle="collapse">
+                                    <i class="front-icon bi bi-file-earmark-text"></i> &nbsp;
+                                    <span style="white-space: normal; margin-left: 19px !important; margin-right: 10px;">
+                                        {{ $item->judul_detail_produk }}
+                                    </span>
+                                </span>
+                                <hr class="mx-4 my-1" style="color: white;" />
+                            </li>
+                        </a>
                     @endforeach
                 </ul>
             </div>

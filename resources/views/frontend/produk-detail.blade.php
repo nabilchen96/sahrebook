@@ -216,6 +216,26 @@
                                 </a>
                             </div>
                         @endif
+                        @if ($detail->gambar_5)
+                            <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_5 }}">
+                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_5 }}');"
+                                        class="shadow card card-image-small">
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
+                        @if ($detail->gambar_6)
+                            <div class="col-2 mb-3" style="padding: 0 0 0 10px">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    data-bs-whatever="{{ asset('gambar_produk') }}/{{ $detail->gambar_6 }}">
+                                    <div style="background-image: url('{{ asset('gambar_produk') }}/{{ $detail->gambar_6 }}');"
+                                        class="shadow card card-image-small">
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
                     </div>
                     <br><br>
                 </div>

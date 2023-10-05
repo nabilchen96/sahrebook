@@ -39,6 +39,7 @@
                             <thead>
                                 <tr>
                                     <th width="5%">No</th>
+                                    <th>Kategori</th>
                                     <th>Detail Judul Produk</th>
                                     <th width="5%"></th>
                                     <th width="5%"></th>
@@ -70,6 +71,9 @@
                         render: function(data, type, row, meta) {
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }
+                    },
+                    {
+                        data: "kategori"
                     },
                     {
                         data: "judul_detail_produk"

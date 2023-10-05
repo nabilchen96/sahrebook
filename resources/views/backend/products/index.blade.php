@@ -116,6 +116,16 @@
                             <input name="gambar_4" id="gambar_4" type="file" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label>Gambar 5 <span class="text-danger" style="font-size: 12px;">(Max size:
+                                    500kb)</span></label>
+                            <input name="gambar_5" id="gambar_5" type="file" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Gambar 6 <span class="text-danger" style="font-size: 12px;">(Max size:
+                                    500kb)</span></label>
+                            <input name="gambar_6" id="gambar_6" type="file" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputPassword1">Status Produk</label>
                             <select name="status_produk" class="form-control" id="status_produk">
                                 <option>Aktif</option>
@@ -184,6 +194,22 @@
                                                 background-size: cover; 
                                                 background-position: center; 
                                                 background-image: url('/gambar_produk/${row.gambar_4}'); 
+                                                aspect-ratio: 1/1; 
+                                                width: 100%;"></div>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="card shadow" style="
+                                                background-size: cover; 
+                                                background-position: center; 
+                                                background-image: url('/gambar_produk/${row.gambar_5}'); 
+                                                aspect-ratio: 1/1; 
+                                                width: 100%;"></div>
+                                        </div>
+                                        <div class="col-6 p-1">
+                                            <div class="card shadow" style="
+                                                background-size: cover; 
+                                                background-position: center; 
+                                                background-image: url('/gambar_produk/${row.gambar_6}'); 
                                                 aspect-ratio: 1/1; 
                                                 width: 100%;"></div>
                                         </div>
