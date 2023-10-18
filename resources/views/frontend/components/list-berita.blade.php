@@ -3,7 +3,7 @@
         @forelse ($data as $item)
             <div class="col-lg-3 col-md-6 px-3 mt-3 mb-3">
                 <a href="{{ url('berita-detail') }}/{{ $item->slug }}" style="text-decoration: none;"
-                    class="card shadow">
+                    class="card">
                     <img class="img-fluid foto_berita" 
                     src="{{ asset('gambar_berita') }}/{{ $item->gambar }}" style="
                         height: 250px;
