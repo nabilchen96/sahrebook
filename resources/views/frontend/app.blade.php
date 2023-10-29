@@ -167,7 +167,7 @@
     <div class="mt-5" style="min-height: 200px; background: #f6f6f6">
         <div class="text-center py-4">
             Copyright ©2022 All rights reserved | Created By Nabil <a target="_blank"
-                href="https://sahretech.com">sahretech</a>
+                href="#">sahretech</a>
         </div>
     </div>
 

@@ -154,7 +154,7 @@
                             </a>
                         </span>
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Developed by
-                            <a href="https://www.sahretech.com/" target="_blank">
+                            <a target="_blank">
                                 Sahretech
                             </a>
                         </span>
