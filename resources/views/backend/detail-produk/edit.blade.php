@@ -59,7 +59,7 @@
                         <div class="mb-3">
                             <label class="form-label">Kategori <sup class="text-danger">*</sup></label>
                             <input type="text" placeholder="Kategori" class="form-control"
-                                id="kategori" name="kategori" required
+                                id="kategori" name="kategori"
                                 value="{{ $data->kategori }}">
                         </div>
                         <div class="mb-3">
