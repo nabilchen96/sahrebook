@@ -13,6 +13,8 @@
     <link rel="shortcut icon" href="{{ asset('sahretech.png') }}" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.bootstrap5.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9737321595122081"
+     crossorigin="anonymous"></script>
     @stack('meta-description')
     <title>SAHRE BOOK</title>
     <style>
