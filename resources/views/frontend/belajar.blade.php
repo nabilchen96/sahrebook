@@ -92,6 +92,16 @@
         .navbar-vertical .navbar-nav .nav-item .nav-link.not-collapse[data-bs-toggle=collapse]:after {
             display: none;
         }
+
+        .command {
+            background: black;
+            padding: 6px;
+            border-radius: 5px;
+            width: 100%;
+            display: block;
+            margin-top: -20px;
+            color: white;
+        }
     </style>
 </head>
 
@@ -123,8 +133,7 @@
                             </li> --}}
                         @else
                             <li class="nav-item">
-                                <a class="nav-link text-white has-arrow" href="#!"
-                                    data-bs-toggle="collapse"
+                                <a class="nav-link text-white has-arrow" href="#!" data-bs-toggle="collapse"
                                     data-bs-target="#nav{{ preg_replace('/[^A-Za-z0-9]/', '', $kategori) }}"
                                     aria-expanded="false" aria-controls="navEmail">
                                     <i class="front-icon bi bi-file-earmark-text"></i>
@@ -134,7 +143,8 @@
                                     </span>
                                 </a>
 
-                                <div id="nav{{ preg_replace('/[^A-Za-z0-9]/', '', $kategori) }}" class="collapse
+                                <div id="nav{{ preg_replace('/[^A-Za-z0-9]/', '', $kategori) }}"
+                                    class="collapse
                                     {{ Request('k') == preg_replace('/[^A-Za-z0-9]/', '', $kategori) ? 'show' : '' }}"
                                     data-bs-parent="#sideNavbar">
                                     <ul style="font-size: 14px;" class="custom-list nav flex-column">
@@ -154,12 +164,15 @@
                         @endif
                     @endforeach
                     @foreach ($data->where('kategori', null) as $kategori => $item)
-                        <a href="{{ url('belajar') }}/{{ $id }}?p={{ $item->id }}#{{ $item->id }}">
+                        <a
+                            href="{{ url('belajar') }}/{{ $id }}?p={{ $item->id }}#{{ $item->id }}">
                             <li class="nav-item" id="{{ $item->id }}">
-                                <span class="nav-link {{ Request('p') == $item->id ? 'text-warning' : 'text-white' }} not-collapse"
+                                <span
+                                    class="nav-link {{ Request('p') == $item->id ? 'text-warning' : 'text-white' }} not-collapse"
                                     data-bs-toggle="collapse">
                                     <i class="front-icon bi bi-file-earmark-text"></i> &nbsp;
-                                    <span style="white-space: normal; margin-left: 19px !important; margin-right: 10px;">
+                                    <span
+                                        style="white-space: normal; margin-left: 19px !important; margin-right: 10px;">
                                         {{ $item->judul_detail_produk }}
                                     </span>
                                 </span>
