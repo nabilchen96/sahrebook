@@ -102,6 +102,24 @@
             margin-top: -20px;
             color: white;
         }
+
+        .floating-button {
+            position: fixed;
+            bottom: 55px;
+            right: 20px;
+        }
+
+        .btn-forum {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 100%;
+            cursor: pointer;
+            width: 80px;
+            height: 80px;
+        }
     </style>
 </head>
 
@@ -212,6 +230,14 @@
 
                         </div>
                     </div>
+                </div>
+                <div class="floating-button">
+                    <button class="btn-forum">
+                        <a target="_blank" class="text-white" href="https://forum.sahrebook.com">
+                            <p style="font-size: 12px; margin-bottom: -7px !important;">Forum</p>
+                            <i style="font-size: 30px; margn-top: -10px !important;" class="bi bi-chat-left-text"></i>
+                        </a>
+                    </button>
                 </div>
                 <div class="d-flex justify-content-end">
                     <a href="{{ url('belajar') }}/{{ $id }}?p={{ $nextData }}"

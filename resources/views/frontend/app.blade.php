@@ -110,6 +110,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('berita') }}" style="margin-right: 20px">Artikel</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://forum.sahrebook.com" style="margin-right: 20px">Forum</a>
+                        </li>
                         <li class="nav-item" data-bs-toggle="modal" data-bs-target="#modalcari">
                             <button class="btn btn-primary mb-1" style="margin-right: 5px; border-radius: 50px">
                                 <i class="bi bi-search"></i>
